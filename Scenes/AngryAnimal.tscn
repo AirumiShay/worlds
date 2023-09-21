@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/AngryAnimal.gd" type="Script" id=2]
+[ext_resource path="res://Assets/animal/neutral_animal_wolf.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/misc/dagger.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 59.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26, 17.5 )
+
+[node name="AngryAnimal" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DamagePlayer" type="CollisionShape2D" parent="." index="0" groups=["player_damage"]]
+position = Vector2( 30, 22 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+position = Vector2( -4, -24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 30, 22.5 )
+shape = SubResource( 1 )
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="DamagePos" index="0"]
+position = Vector2( 23, 30 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="DamagePos" index="1"]
+position = Vector2( 55, 45 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[node name="Mob" type="Label" parent="." index="6"]
+margin_top = -28.0
+margin_right = 65.0
+margin_bottom = -14.0
+text = "Hell's Dog"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="." index="7"]
+margin_left = 57.0
+margin_top = -12.0
+margin_right = 67.0
+margin_bottom = 2.0
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_bar" parent="." index="8"]
+margin_left = 7.0
+margin_top = -7.0
+margin_right = 57.0
+margin_bottom = -2.0
+max_value = 150.0
+value = 150.0
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

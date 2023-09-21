@@ -1,0 +1,239 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/splash1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/button/start.png" type="Texture" id=3]
+[ext_resource path="res://Assets/button/server.png" type="Texture" id=4]
+[ext_resource path="res://music/menu.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/button/cancel.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/aos_messages.png" type="Texture" id=7]
+[ext_resource path="res://addons/blocking_dialog_box/blocking_dialog_box.gd" type="Script" id=8]
+[ext_resource path="res://addons/blocking_dialog_box/blocking_list_selection.gd" type="Script" id=9]
+[ext_resource path="res://addons/blocking_dialog_box/blocking_input_box.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Wizard/Wizard0.png" type="Texture" id=11]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BlockingDialogBox" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="BlockingInputBox" type="CanvasLayer" parent="."]
+script = ExtResource( 10 )
+
+[node name="BlockingListSelection" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="NameLineEdit" type="LineEdit" parent="Main"]
+margin_left = 354.0
+margin_top = 259.0
+margin_right = 627.0
+margin_bottom = 291.0
+rect_scale = Vector2( 2, 2 )
+text = "Anon"
+max_length = 32
+placeholder_text = "Enter nickname here..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLineEdit" type="LineEdit" parent="Main"]
+margin_left = 10.0
+margin_top = 19.0
+margin_right = 394.0
+margin_bottom = 51.0
+max_length = 20
+placeholder_text = "127.0.0.1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="Button" parent="Main"]
+margin_left = 513.0
+margin_top = 157.0
+margin_right = 738.0
+margin_bottom = 221.0
+text = "NEW GAME: Dark Empire "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/JoinButton"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="JoinEmpire" type="Button" parent="Main"]
+margin_left = 351.0
+margin_top = 368.0
+margin_right = 577.0
+margin_bottom = 432.0
+text = "NEW GAME: Empire of Light"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/JoinEmpire"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="JoinExile" type="Button" parent="Main"]
+margin_left = 673.0
+margin_top = 368.0
+margin_right = 899.0
+margin_bottom = 432.0
+text = "NEW GAME: Exiles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/JoinExile"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ServerButton" type="Button" parent="Main"]
+margin_left = 6.0
+margin_top = 550.0
+margin_right = 184.0
+margin_bottom = 649.0
+text = "Create Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/ServerButton"]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="NameLabel" type="Label" parent="Main"]
+margin_left = 363.0
+margin_top = 239.0
+margin_right = 405.0
+margin_bottom = 253.0
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLabel" type="Label" parent="Main"]
+margin_left = 13.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "IP adress to connect:"
+
+[node name="GameVersion" type="Label" parent="Main"]
+margin_left = 1114.0
+margin_top = 704.0
+margin_right = 1274.0
+margin_bottom = 718.0
+text = "Worlds and Gods v 0.101"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="Main"]
+margin_left = 448.0
+margin_top = 360.0
+margin_right = 832.0
+margin_bottom = 374.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateButton" type="LinkButton" parent="Main"]
+margin_left = 1112.0
+margin_top = 686.0
+margin_right = 1264.0
+margin_bottom = 700.0
+text = "Create server 10.42.1.1"
+underline = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Main"]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="quit_game" type="Button" parent="Main"]
+margin_left = 545.0
+margin_top = 624.0
+margin_right = 639.0
+margin_bottom = 718.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/quit_game"]
+position = Vector2( -1, 92 )
+rotation = 4.71239
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="settings" type="Button" parent="Main"]
+margin_left = 1194.0
+margin_top = 355.0
+margin_right = 1284.0
+margin_bottom = 438.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/settings"]
+scale = Vector2( 0.9, 0.85 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Astral" type="Button" parent="Main"]
+margin_left = 1120.0
+margin_top = 450.0
+margin_right = 1210.0
+margin_bottom = 533.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Main/Astral"]
+position = Vector2( 10, 0 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Help" type="Button" parent="."]
+margin_left = 14.0
+margin_top = 666.0
+margin_right = 62.0
+margin_bottom = 686.0
+rect_scale = Vector2( 2, 2 )
+text = "HELP"
+
+[connection signal="text_changed" from="Main/NameLineEdit" to="." method="_on_NameLineEdit_text_changed"]
+[connection signal="text_changed" from="Main/IPLineEdit" to="." method="_on_IPLineEdit_text_changed"]
+[connection signal="pressed" from="Main/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="Main/JoinEmpire" to="." method="_on_JoinEmpire_pressed"]
+[connection signal="pressed" from="Main/JoinExile" to="." method="_on_JoinExile_pressed"]
+[connection signal="pressed" from="Main/ServerButton" to="." method="_on_ServerButton_pressed"]
+[connection signal="pressed" from="Main/CreateButton" to="." method="_on_CreateButton_pressed"]
+[connection signal="pressed" from="Main/quit_game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="Main/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/Astral" to="." method="_on_Astral_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_Help_pressed"]

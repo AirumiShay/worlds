@@ -1,0 +1,408 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://audio/NPC/0/Hello_Katya.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/builds_new/empire/unit_castle_village.png" type="Texture" id=4]
+[ext_resource path="res://Assets/builds_new/empire/gnome/unit_bld_mega_castle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/builds_new/empire/unit_outpost.png" type="Texture" id=6]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_mega_monastery.png" type="Texture" id=7]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_posthouse.png" type="Texture" id=8]
+[ext_resource path="res://Assets/build/village_blue.png" type="Texture" id=9]
+[ext_resource path="res://audio/NPC/0/Hello_Alla.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Build/VillageExile.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Images/shop.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Town/Yolensberg.gd" type="Script" id=13]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_archery_upg.png" type="Texture" id=14]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_church.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Town/Moonsberg.gd" type="Script" id=16]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_archery.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Race/Elf_Merchant.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 156.5, 153 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 104.5, 68 )
+
+[node name="Merchant" type="Node2D"]
+
+[node name="Moonsberg" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( 1604, -775 )
+script = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="Moonsberg"]
+position = Vector2( 26, 25 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moonsberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Moonsberg"]
+margin_left = 67.0
+margin_top = 1.0
+margin_right = 139.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 464, 56 )
+text = "Moonsberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wellcome" type="AudioStreamPlayer" parent="Moonsberg"]
+stream = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="Moonsberg"]
+
+[node name="Yolensberg" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( 618, 1743 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yolensberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Yolensberg"]
+margin_left = 64.0
+margin_top = 88.0
+margin_right = 136.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 464, 56 )
+text = "Yolensberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Yolensberg"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Wellcome" type="AudioStreamPlayer" parent="Yolensberg"]
+stream = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="Yolensberg"]
+
+[node name="Newtown" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( 1107, 1750 )
+
+[node name="Sprite" type="Sprite" parent="Newtown"]
+position = Vector2( 272, 47 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Newtown"]
+position = Vector2( 272, 43 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Newtown"]
+margin_left = 228.0
+margin_top = -30.0
+margin_right = 313.0
+margin_bottom = -10.0
+text = "ElyinaTemple"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sunberg" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -469, 1801 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sunberg"]
+position = Vector2( 2, 10 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Sunberg"]
+margin_left = -32.0
+margin_top = -61.0
+margin_right = 48.0
+margin_bottom = -41.0
+text = "Surensia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Sunberg"]
+position = Vector2( 3, -3 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="Qubic" type="Area2D" parent="." groups=["village"]]
+position = Vector2( -1737, -1977 )
+
+[node name="Sprite" type="Sprite" parent="Qubic"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Qubic"]
+position = Vector2( 97.5, 102.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Qubic"]
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 29.0
+text = "Grassia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Qubic3" type="Area2D" parent="." groups=["village"]]
+position = Vector2( -2611, -1987 )
+
+[node name="Sprite" type="Sprite" parent="Qubic3"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Qubic3"]
+position = Vector2( 97.5, 102.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Qubic3"]
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 29.0
+text = "Grassia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Qubic4" type="Area2D" parent="." groups=["village"]]
+position = Vector2( -3492, -1988 )
+
+[node name="Sprite" type="Sprite" parent="Qubic4"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Qubic4"]
+position = Vector2( 97.5, 102.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Qubic4"]
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 29.0
+text = "Grassia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Qubic2" type="Area2D" parent="." groups=["village"]]
+position = Vector2( -2593, -1287 )
+
+[node name="Sprite" type="Sprite" parent="Qubic2"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Qubic2"]
+position = Vector2( 97.5, 102.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Qubic2"]
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 29.0
+text = "Grassia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmpireCapita;" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -2576, -777 )
+
+[node name="CapitalName" type="Label" parent="EmpireCapita;"]
+margin_left = 50.0
+margin_top = -62.0
+margin_right = 138.0
+margin_bottom = -42.0
+text = "Shining"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="EmpireCapita;"]
+position = Vector2( 100, 100 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EmpireCapita;"]
+position = Vector2( 105.5, 100 )
+shape = SubResource( 3 )
+
+[node name="ExileMerchant" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -99, -1600 )
+
+[node name="Sprite" type="Sprite" parent="ExileMerchant"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExileMerchant"]
+position = Vector2( 70, 62 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="ExileMerchant"]
+margin_left = 221.0
+margin_top = 162.0
+margin_right = 309.0
+margin_bottom = 182.0
+text = "BravesBerg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VillageMerchant" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( 584, -748 )
+
+[node name="Sprite" type="Sprite" parent="VillageMerchant"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="VillageMerchant"]
+margin_left = 56.0
+margin_top = 11.0
+margin_right = 144.0
+margin_bottom = 31.0
+text = "Mirsana"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageMerchant"]
+position = Vector2( 101.5, 127 )
+shape = SubResource( 2 )
+
+[node name="VillageExile1" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -577, 2395 )
+scale = Vector2( 3, 3 )
+
+[node name="Sprite" type="Sprite" parent="VillageExile1"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageExile1"]
+position = Vector2( 101.667, 103.833 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="VillageExile1"]
+margin_left = 49.3333
+margin_top = 42.0
+margin_right = 159.333
+margin_bottom = 62.0
+text = "VillageExile Robertina"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reebeca" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( 962, 1693 )
+
+[node name="Sprite" type="Sprite" parent="Reebeca"]
+position = Vector2( 100, 75 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reebeca"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Reebeca"]
+margin_left = 57.0
+margin_top = 9.0
+margin_right = 145.0
+margin_bottom = 29.0
+text = "Kilinara"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bestberg" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -148, -736 )
+
+[node name="Sprite" type="Sprite" parent="Bestberg"]
+position = Vector2( 100, 100 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bestberg"]
+position = Vector2( 110, 99 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Bestberg"]
+margin_left = 64.0
+margin_top = 20.0
+margin_right = 152.0
+margin_bottom = 40.0
+text = "Kirmana"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VillageExile2" type="Area2D" parent="." groups=["shops"]]
+position = Vector2( -4900, 2395 )
+
+[node name="Sprite" type="Sprite" parent="VillageExile2"]
+position = Vector2( 259, 399 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageExile2"]
+position = Vector2( 260.5, 400.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="VillageExile2"]
+margin_left = 209.0
+margin_top = 332.0
+margin_right = 319.0
+margin_bottom = 352.0
+text = "VillageExile Berta"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MerchantExile" parent="." instance=ExtResource( 18 )]
+position = Vector2( -5396, -777 )
+
+[node name="VillageExile" parent="MerchantExile" instance=ExtResource( 11 )]
+position = Vector2( 4, -58 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="MerchantExile2" parent="." instance=ExtResource( 18 )]
+position = Vector2( -2064, -1016 )
+
+[node name="VillageExile" parent="MerchantExile2" instance=ExtResource( 11 )]
+position = Vector2( 4, -58 )
+scale = Vector2( 0.5, 0.5 )
+
+[connection signal="finished" from="Moonsberg/Wellcome" to="Moonsberg" method="_on_Wellcome_finished"]
+[connection signal="timeout" from="Moonsberg/Timer" to="Moonsberg" method="_on_Timer_timeout"]
+[connection signal="finished" from="Yolensberg/Wellcome" to="Yolensberg" method="_on_Wellcome_finished"]
+[connection signal="timeout" from="Yolensberg/Timer" to="Yolensberg" method="_on_Timer_timeout"]

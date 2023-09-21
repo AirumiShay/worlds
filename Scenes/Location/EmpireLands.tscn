@@ -1,0 +1,1504 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Location/Empire/Merchant.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Build/TowerGuard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Race/Elf_Priest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://music/home.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/AngryAnimal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Race/Elf_Ranger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Race/Elf_Leader.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Walls/Grane.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Race/Ork.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Nature/Grass2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Build/MagicTower.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Build/Start_Town.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Build/Outpost.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Dungeon/Dungeon_Enter.tscn" type="PackedScene" id=31]
+
+[node name="EmpireLands" type="Node2D"]
+position = Vector2( 2496, -222 )
+
+[node name="Grass" type="Node2D" parent="."]
+
+[node name="Grass2" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1622, 1692 )
+
+[node name="Grass3" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1372, 1692 )
+
+[node name="Grass4" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1136, 1692 )
+
+[node name="Grass5" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 886, 1692 )
+
+[node name="Grass6" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 637, 1692 )
+
+[node name="Grass7" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 387, 1692 )
+
+[node name="Grass8" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 151, 1692 )
+
+[node name="Grass9" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -99, 1692 )
+
+[node name="Grass10" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -351, 1692 )
+
+[node name="Grass11" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -601, 1692 )
+
+[node name="Grass12" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -837, 1692 )
+
+[node name="Grass13" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1087, 1692 )
+
+[node name="Grass14" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1558, -769 )
+
+[node name="Grass15" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1308, -769 )
+
+[node name="Grass16" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 1072, -769 )
+
+[node name="Grass17" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 822, -769 )
+
+[node name="Grass18" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 573, -769 )
+
+[node name="Grass19" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 323, -769 )
+
+[node name="Grass20" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( 87, -769 )
+
+[node name="Grass21" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -163, -769 )
+
+[node name="Grass22" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -415, -769 )
+
+[node name="Grass23" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -665, -769 )
+
+[node name="Grass24" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -901, -769 )
+
+[node name="Grass25" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1151, -769 )
+
+[node name="Grass26" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1769, -2002 )
+
+[node name="Grass27" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2634, -2010 )
+
+[node name="Grass32" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2622, -1308 )
+
+[node name="Grass33" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -3492, -1306 )
+
+[node name="Grass36" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -3492, -1042 )
+
+[node name="Grass38" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -3520, -596 )
+
+[node name="Grass39" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -3520, -332 )
+
+[node name="Grass40" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1749, -579 )
+
+[node name="Grass41" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1749, -315 )
+
+[node name="Grass37" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -6220, 109 )
+
+[node name="Grass34" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1756, -1282 )
+
+[node name="Grass35" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -1756, -1018 )
+
+[node name="Grass28" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -6220, -155 )
+
+[node name="Grass29" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2734, -920 )
+
+[node name="Grass42" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2478, -920 )
+
+[node name="Grass43" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2734, -656 )
+
+[node name="Grass44" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -2478, -656 )
+
+[node name="Grass30" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -4476, -605 )
+
+[node name="Grass31" parent="Grass" instance=ExtResource( 22 )]
+position = Vector2( -3544, -2002 )
+
+[node name="Merchant" parent="." instance=ExtResource( 1 )]
+
+[node name="TowerGuard" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -3042, -2011 )
+
+[node name="TowerGuard2" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -2112, -2011 )
+
+[node name="TowerGuard3" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -4091, -2029 )
+
+[node name="TowerGuard4" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -4096, -1344 )
+
+[node name="TowerGuard5" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -4111, -486 )
+
+[node name="TowerGuard6" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -1133, -456 )
+
+[node name="TowerGuard7" parent="Merchant" instance=ExtResource( 2 )]
+position = Vector2( -908, -1250 )
+
+[node name="Player" parent="." instance=ExtResource( 15 )]
+position = Vector2( -4913, 1114 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( 106, 89 )
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="MagicTower" parent="." instance=ExtResource( 25 )]
+position = Vector2( -3454, -486 )
+
+[node name="MagicTower2" parent="." instance=ExtResource( 25 )]
+position = Vector2( -1703, -464 )
+
+[node name="MagicTower4" parent="." instance=ExtResource( 25 )]
+position = Vector2( -3432, -1304 )
+
+[node name="MagicTower5" parent="." instance=ExtResource( 25 )]
+position = Vector2( -1681, -1282 )
+
+[node name="MagicTower3" parent="." instance=ExtResource( 25 )]
+position = Vector2( -6160, -158 )
+
+[node name="Animal" type="Node2D" parent="."]
+
+[node name="AngryAnimal6" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -6087, 869 )
+
+[node name="AngryAnimal18" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -6091, 588 )
+
+[node name="AngryAnimal9" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -2573, -1495 )
+
+[node name="AngryAnimal10" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -1199, -811 )
+
+[node name="AngryAnimal11" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( 886, 371 )
+
+[node name="AngryAnimal12" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -330, -1696 )
+
+[node name="AngryAnimal13" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -446, -1717 )
+
+[node name="AngryAnimal14" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -424, -1636 )
+
+[node name="AngryAnimal15" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -382, -1765 )
+
+[node name="AngryAnimal16" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -345, -1634 )
+
+[node name="AngryAnimal" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -2578, -1576 )
+
+[node name="AngryAnimal2" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -2488, -1491 )
+
+[node name="AngryAnimal3" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -2490, -1572 )
+
+[node name="Elf2" type="Node2D" parent="."]
+
+[node name="DarkEmpire" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -3590, 393 )
+
+[node name="DarkEmpire2" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -6088, 1206 )
+
+[node name="DarkEmpire3" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -4622, 217 )
+
+[node name="DarkEmpire4" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -5444, 210 )
+
+[node name="DarkEmpire5" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -6089, 1512 )
+
+[node name="DarkEmpire6" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -3580, 762 )
+
+[node name="DarkEmpire7" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -5245, 1716 )
+
+[node name="DarkEmpire8" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -4927, 1721 )
+
+[node name="DarkEmpire9" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -5065, 214 )
+
+[node name="DarkEmpire10" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -4148, 207 )
+
+[node name="DarkEmpire11" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -4582, 1740 )
+
+[node name="DarkEmpire12" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -5579, 1703 )
+
+[node name="DarkEmpire13" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -5938, 1712 )
+
+[node name="DarkEmpire14" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -4201, 1728 )
+
+[node name="DarkEmpire15" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -3890, 1718 )
+
+[node name="DarkEmpire16" parent="Elf2" instance=ExtResource( 3 )]
+position = Vector2( -3592, 1255 )
+
+[node name="Nature" type="Node2D" parent="."]
+
+[node name="Grane11" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3544 )
+
+[node name="Grane12" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3476 )
+
+[node name="Grane13" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3340 )
+
+[node name="Grane14" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3272 )
+
+[node name="Grane16" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3204 )
+
+[node name="Grane17" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3136 )
+
+[node name="Grane18" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3408 )
+
+[node name="Grane19" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3000 )
+
+[node name="Grane20" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2932 )
+
+[node name="Grane21" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7205, -3068 )
+
+[node name="Grane22" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -464 )
+
+[node name="Grane23" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -396 )
+
+[node name="Grane47" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -670, 2348 )
+
+[node name="Grane48" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -539, 2348 )
+
+[node name="Grane49" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -411, 2348 )
+
+[node name="Grane50" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -280, 2348 )
+
+[node name="Grane51" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -670, 3094 )
+
+[node name="Grane52" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -539, 3094 )
+
+[node name="Grane53" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -411, 3094 )
+
+[node name="Grane54" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -280, 3094 )
+
+[node name="Grane55" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -216, 2344 )
+
+[node name="Grane56" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -85, 2344 )
+
+[node name="Grane57" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 43, 2344 )
+
+[node name="Grane58" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 174, 2344 )
+
+[node name="Grane59" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 238, 2344 )
+
+[node name="Grane60" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 369, 2344 )
+
+[node name="Grane61" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 497, 2344 )
+
+[node name="Grane62" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 628, 2344 )
+
+[node name="Grane63" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 692, 2344 )
+
+[node name="Grane64" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 823, 2344 )
+
+[node name="Grane65" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 951, 2344 )
+
+[node name="Grane66" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1082, 2344 )
+
+[node name="Grane67" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1146, 2344 )
+
+[node name="Grane68" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1277, 2344 )
+
+[node name="Grane69" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1405, 2344 )
+
+[node name="Grane70" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -149, 3094 )
+
+[node name="Grane71" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -21, 3094 )
+
+[node name="Grane72" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 110, 3094 )
+
+[node name="Grane73" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 174, 3094 )
+
+[node name="Grane74" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 305, 3094 )
+
+[node name="Grane75" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 433, 3094 )
+
+[node name="Grane76" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 564, 3094 )
+
+[node name="Grane77" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 628, 3094 )
+
+[node name="Grane78" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 759, 3094 )
+
+[node name="Grane79" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 887, 3094 )
+
+[node name="Grane80" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1018, 3094 )
+
+[node name="Grane81" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1082, 3094 )
+
+[node name="Grane82" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1213, 3094 )
+
+[node name="Grane83" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1341, 3094 )
+
+[node name="Grane84" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1236 )
+
+[node name="Grane85" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1168 )
+
+[node name="Grane86" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1106 )
+
+[node name="Grane87" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1047 )
+
+[node name="Grane88" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -911 )
+
+[node name="Grane89" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -843 )
+
+[node name="Grane90" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -979 )
+
+[node name="Grane91" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane92" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane93" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -577 )
+
+[node name="Grane94" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -518 )
+
+[node name="Grane95" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane96" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -382 )
+
+[node name="Grane97" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -314 )
+
+[node name="Grane98" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -450 )
+
+[node name="Grane99" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1508 )
+
+[node name="Grane100" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1440 )
+
+[node name="Grane101" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 747 )
+
+[node name="Grane102" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 806 )
+
+[node name="Grane103" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 942 )
+
+[node name="Grane104" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1010 )
+
+[node name="Grane105" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 874 )
+
+[node name="Grane106" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane107" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane108" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 416 )
+
+[node name="Grane109" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 475 )
+
+[node name="Grane110" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane111" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 611 )
+
+[node name="Grane112" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 679 )
+
+[node name="Grane113" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 543 )
+
+[node name="Grane114" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1298 )
+
+[node name="Grane115" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1230 )
+
+[node name="Grane116" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1168 )
+
+[node name="Grane117" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1109 )
+
+[node name="Grane118" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -973 )
+
+[node name="Grane119" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -905 )
+
+[node name="Grane120" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1041 )
+
+[node name="Grane121" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -769 )
+
+[node name="Grane122" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -701 )
+
+[node name="Grane123" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, -639 )
+
+[node name="Grane124" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, -580 )
+
+[node name="Grane125" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -837 )
+
+[node name="Grane126" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, -444 )
+
+[node name="Grane127" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, -376 )
+
+[node name="Grane128" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, -512 )
+
+[node name="Grane129" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1570 )
+
+[node name="Grane130" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1502 )
+
+[node name="Grane131" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 685 )
+
+[node name="Grane132" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 744 )
+
+[node name="Grane133" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 880 )
+
+[node name="Grane134" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 948 )
+
+[node name="Grane135" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 812 )
+
+[node name="Grane136" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -769 )
+
+[node name="Grane137" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -701 )
+
+[node name="Grane138" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 354 )
+
+[node name="Grane139" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 413 )
+
+[node name="Grane140" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7184, -837 )
+
+[node name="Grane141" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 549 )
+
+[node name="Grane142" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 617 )
+
+[node name="Grane143" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -7180, 481 )
+
+[node name="Grane144" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2348 )
+
+[node name="Grane145" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4862, 2348 )
+
+[node name="Grane146" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4734, 2348 )
+
+[node name="Grane147" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4603, 2348 )
+
+[node name="Grane148" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4993, 3094 )
+
+[node name="Grane149" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4862, 3094 )
+
+[node name="Grane150" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4734, 3094 )
+
+[node name="Grane151" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4603, 3094 )
+
+[node name="Grane152" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4539, 2344 )
+
+[node name="Grane153" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4408, 2344 )
+
+[node name="Grane154" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4280, 2344 )
+
+[node name="Grane155" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4149, 2344 )
+
+[node name="Grane156" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4085, 2344 )
+
+[node name="Grane157" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3954, 2344 )
+
+[node name="Grane158" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3826, 2344 )
+
+[node name="Grane159" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3695, 2344 )
+
+[node name="Grane160" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3631, 2344 )
+
+[node name="Grane161" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3500, 2344 )
+
+[node name="Grane162" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3372, 2344 )
+
+[node name="Grane163" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3241, 2344 )
+
+[node name="Grane164" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3177, 2344 )
+
+[node name="Grane165" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3046, 2344 )
+
+[node name="Grane166" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -2918, 2344 )
+
+[node name="Grane167" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4472, 3094 )
+
+[node name="Grane168" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4344, 3094 )
+
+[node name="Grane169" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4213, 3094 )
+
+[node name="Grane170" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4149, 3094 )
+
+[node name="Grane171" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4018, 3094 )
+
+[node name="Grane172" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3890, 3094 )
+
+[node name="Grane173" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3759, 3094 )
+
+[node name="Grane174" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3695, 3094 )
+
+[node name="Grane175" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3564, 3094 )
+
+[node name="Grane176" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3436, 3094 )
+
+[node name="Grane177" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3305, 3094 )
+
+[node name="Grane178" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3241, 3094 )
+
+[node name="Grane179" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3110, 3094 )
+
+[node name="Grane180" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -2982, 3094 )
+
+[node name="Grane31" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3521 )
+
+[node name="Grane32" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3453 )
+
+[node name="Grane33" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3317 )
+
+[node name="Grane34" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3249 )
+
+[node name="Grane35" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3181 )
+
+[node name="Grane37" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3113 )
+
+[node name="Grane43" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3385 )
+
+[node name="Grane44" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2977 )
+
+[node name="Grane45" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2909 )
+
+[node name="Grane181" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1869, -3045 )
+
+[node name="Nature2" type="Node2D" parent="."]
+
+[node name="Grane6" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2261 )
+
+[node name="Grane7" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2193 )
+
+[node name="Grane8" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2125 )
+
+[node name="Grane9" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2066 )
+
+[node name="Grane10" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, 0 )
+
+[node name="Grane11" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -1930 )
+
+[node name="Grane12" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2864 )
+
+[node name="Grane15" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -1998 )
+
+[node name="Grane13" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2728 )
+
+[node name="Grane14" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2660 )
+
+[node name="Grane16" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2524 )
+
+[node name="Grane17" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2465 )
+
+[node name="Grane18" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2796 )
+
+[node name="Grane19" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2329 )
+
+[node name="Grane20" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2592 )
+
+[node name="Grane21" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7205, -2397 )
+
+[node name="Grane47" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -606, 2348 )
+
+[node name="Grane48" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -475, 2348 )
+
+[node name="Grane49" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -347, 2348 )
+
+[node name="Grane50" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2344 )
+
+[node name="Grane51" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2412 )
+
+[node name="Grane52" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2480 )
+
+[node name="Grane53" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2548 )
+
+[node name="Grane54" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2615 )
+
+[node name="Grane55" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2683 )
+
+[node name="Grane56" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2751 )
+
+[node name="Grane57" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2819 )
+
+[node name="Grane58" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2887 )
+
+[node name="Grane59" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 2955 )
+
+[node name="Grane60" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 3023 )
+
+[node name="Grane65" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2416 )
+
+[node name="Grane66" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2552 )
+
+[node name="Grane67" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2619 )
+
+[node name="Grane68" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2687 )
+
+[node name="Grane69" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2755 )
+
+[node name="Grane70" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2823 )
+
+[node name="Grane71" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2891 )
+
+[node name="Grane72" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 2959 )
+
+[node name="Grane73" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -670, 3027 )
+
+[node name="Grane74" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 7 )
+
+[node name="Grane83" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 69 )
+
+[node name="Grane75" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 143 )
+
+[node name="Grane76" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 210 )
+
+[node name="Grane77" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 278 )
+
+[node name="Grane78" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 346 )
+
+[node name="Grane79" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 414 )
+
+[node name="Grane80" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 482 )
+
+[node name="Grane81" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 550 )
+
+[node name="Grane82" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 618 )
+
+[node name="Grane61" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1533, 3091 )
+
+[node name="Grane108" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1469, 3091 )
+
+[node name="Grane62" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -606, 3094 )
+
+[node name="Grane63" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -475, 3094 )
+
+[node name="Grane64" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -347, 3094 )
+
+[node name="Grane84" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -152, 2344 )
+
+[node name="Grane85" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -21, 2344 )
+
+[node name="Grane86" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 107, 2344 )
+
+[node name="Grane87" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 302, 2344 )
+
+[node name="Grane88" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 433, 2344 )
+
+[node name="Grane89" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 561, 2344 )
+
+[node name="Grane90" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 756, 2344 )
+
+[node name="Grane91" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 887, 2344 )
+
+[node name="Grane92" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1015, 2344 )
+
+[node name="Grane93" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1210, 2344 )
+
+[node name="Grane94" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1341, 2344 )
+
+[node name="Grane95" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1469, 2344 )
+
+[node name="Grane96" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -216, 3094 )
+
+[node name="Grane97" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -85, 3094 )
+
+[node name="Grane98" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 43, 3094 )
+
+[node name="Grane99" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 238, 3094 )
+
+[node name="Grane100" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 369, 3094 )
+
+[node name="Grane101" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 497, 3094 )
+
+[node name="Grane102" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 692, 3094 )
+
+[node name="Grane103" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 823, 3094 )
+
+[node name="Grane104" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 951, 3094 )
+
+[node name="Grane105" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1146, 3094 )
+
+[node name="Grane106" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1277, 3094 )
+
+[node name="Grane107" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1405, 3094 )
+
+[node name="Grane109" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1372 )
+
+[node name="Grane110" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1304 )
+
+[node name="Grane111" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -246 )
+
+[node name="Grane112" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -187 )
+
+[node name="Grane113" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -51 )
+
+[node name="Grane114" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 17 )
+
+[node name="Grane115" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -119 )
+
+[node name="Grane116" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane117" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane118" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 85 )
+
+[node name="Grane119" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 144 )
+
+[node name="Grane120" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane121" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 280 )
+
+[node name="Grane122" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 348 )
+
+[node name="Grane123" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 212 )
+
+[node name="Grane124" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1811 )
+
+[node name="Grane125" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1879 )
+
+[node name="Grane126" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1941 )
+
+[node name="Grane127" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 2000 )
+
+[node name="Grane128" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1146 )
+
+[node name="Grane129" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1214 )
+
+[node name="Grane130" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1078 )
+
+[node name="Grane131" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1350 )
+
+[node name="Grane132" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1418 )
+
+[node name="Grane133" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1480 )
+
+[node name="Grane134" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1539 )
+
+[node name="Grane135" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1282 )
+
+[node name="Grane136" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1675 )
+
+[node name="Grane137" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1743 )
+
+[node name="Grane138" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1607 )
+
+[node name="Grane139" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1434 )
+
+[node name="Grane140" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7184, -1366 )
+
+[node name="Grane141" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, -308 )
+
+[node name="Grane142" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, -249 )
+
+[node name="Grane143" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, -113 )
+
+[node name="Grane144" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, -45 )
+
+[node name="Grane145" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, -181 )
+
+[node name="Grane146" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7184, -769 )
+
+[node name="Grane147" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7184, -701 )
+
+[node name="Grane148" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 23 )
+
+[node name="Grane149" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 82 )
+
+[node name="Grane150" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7184, -837 )
+
+[node name="Grane151" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 218 )
+
+[node name="Grane152" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 286 )
+
+[node name="Grane153" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 150 )
+
+[node name="Grane154" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1749 )
+
+[node name="Grane155" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1817 )
+
+[node name="Grane156" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1879 )
+
+[node name="Grane157" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1938 )
+
+[node name="Grane158" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1084 )
+
+[node name="Grane159" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1152 )
+
+[node name="Grane160" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1016 )
+
+[node name="Grane161" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1288 )
+
+[node name="Grane162" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1356 )
+
+[node name="Grane163" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1418 )
+
+[node name="Grane164" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1477 )
+
+[node name="Grane165" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1220 )
+
+[node name="Grane166" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1613 )
+
+[node name="Grane167" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1681 )
+
+[node name="Grane168" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -7180, 1545 )
+
+[node name="Grane169" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4929, 2348 )
+
+[node name="Grane170" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4798, 2348 )
+
+[node name="Grane171" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4670, 2348 )
+
+[node name="Grane172" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2344 )
+
+[node name="Grane173" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2412 )
+
+[node name="Grane174" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2480 )
+
+[node name="Grane175" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2548 )
+
+[node name="Grane176" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2615 )
+
+[node name="Grane177" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2683 )
+
+[node name="Grane178" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2751 )
+
+[node name="Grane179" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2819 )
+
+[node name="Grane180" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2887 )
+
+[node name="Grane181" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 2955 )
+
+[node name="Grane182" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 3023 )
+
+[node name="Grane183" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2416 )
+
+[node name="Grane184" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2552 )
+
+[node name="Grane185" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2619 )
+
+[node name="Grane186" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2687 )
+
+[node name="Grane187" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2755 )
+
+[node name="Grane188" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2823 )
+
+[node name="Grane189" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2891 )
+
+[node name="Grane190" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 2959 )
+
+[node name="Grane191" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4993, 3027 )
+
+[node name="Grane192" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2790, 3091 )
+
+[node name="Grane193" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2854, 3091 )
+
+[node name="Grane194" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4929, 3094 )
+
+[node name="Grane195" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4798, 3094 )
+
+[node name="Grane196" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4670, 3094 )
+
+[node name="Grane197" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4475, 2344 )
+
+[node name="Grane198" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4344, 2344 )
+
+[node name="Grane199" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4216, 2344 )
+
+[node name="Grane200" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4021, 2344 )
+
+[node name="Grane201" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3890, 2344 )
+
+[node name="Grane202" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3762, 2344 )
+
+[node name="Grane203" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3567, 2344 )
+
+[node name="Grane204" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3436, 2344 )
+
+[node name="Grane205" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3308, 2344 )
+
+[node name="Grane206" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3113, 2344 )
+
+[node name="Grane207" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2982, 2344 )
+
+[node name="Grane208" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2854, 2344 )
+
+[node name="Grane209" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4539, 3094 )
+
+[node name="Grane210" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4408, 3094 )
+
+[node name="Grane211" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4280, 3094 )
+
+[node name="Grane212" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4085, 3094 )
+
+[node name="Grane213" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3954, 3094 )
+
+[node name="Grane214" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3826, 3094 )
+
+[node name="Grane215" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3631, 3094 )
+
+[node name="Grane216" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3500, 3094 )
+
+[node name="Grane217" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3372, 3094 )
+
+[node name="Grane218" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3177, 3094 )
+
+[node name="Grane219" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3046, 3094 )
+
+[node name="Grane220" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2918, 3094 )
+
+[node name="Grane221" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2238 )
+
+[node name="Grane222" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2170 )
+
+[node name="Grane223" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2102 )
+
+[node name="Grane224" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2043 )
+
+[node name="Grane225" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -1907 )
+
+[node name="Grane226" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2841 )
+
+[node name="Grane227" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -1975 )
+
+[node name="Grane228" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2705 )
+
+[node name="Grane229" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2637 )
+
+[node name="Grane230" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2501 )
+
+[node name="Grane231" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2442 )
+
+[node name="Grane232" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2773 )
+
+[node name="Grane233" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2306 )
+
+[node name="Grane234" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2569 )
+
+[node name="Grane235" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1869, -2374 )
+
+[node name="MagFire" type="Node2D" parent="."]
+
+[node name="Paladin" type="Node2D" parent="."]
+
+[node name="Exile" type="Node2D" parent="."]
+
+[node name="Temple_old" parent="Exile" instance=ExtResource( 27 )]
+position = Vector2( 1172, 2433 )
+
+[node name="Temple_old2" parent="Exile" instance=ExtResource( 27 )]
+position = Vector2( -3151, 2433 )
+
+[node name="BuildVillage" type="Node2D" parent="."]
+
+[node name="BuildFarm" type="Node2D" parent="."]
+
+[node name="BuildFortress" type="Node2D" parent="."]
+
+[node name="BuildTemple" type="Node2D" parent="."]
+
+[node name="BuildMagicTower" type="Node2D" parent="."]
+
+[node name="BuildCastle" type="Node2D" parent="."]
+
+[node name="BuildCapital" type="Node2D" parent="."]
+
+[node name="Bags" type="Node2D" parent="."]
+
+[node name="Elf" type="Node2D" parent="."]
+
+[node name="PlayerNPC" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -1245, -1505 )
+
+[node name="PlayerNPC6" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( 56, -1681 )
+
+[node name="PlayerNPC7" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -239, -1710 )
+
+[node name="PlayerNPC8" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -253, -1805 )
+
+[node name="PlayerNPC9" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -379, -1852 )
+
+[node name="PlayerNPC10" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -499, -1799 )
+
+[node name="PlayerNPC11" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -498, -1716 )
+
+[node name="PlayerNPC12" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( 688, -1013 )
+
+[node name="PlayerNPC2" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -3560, 577 )
+
+[node name="PlayerNPC3" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -3896, 1262 )
+
+[node name="PlayerNPC4" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -4763, 420 )
+
+[node name="PlayerNPC5" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -4778, 691 )
+
+[node name="Ork" type="Node2D" parent="."]
+
+[node name="Ork" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2575, -1652 )
+
+[node name="Ork2" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2490, -1645 )
+
+[node name="Ork3" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2421, -1564 )
+
+[node name="Ork4" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2413, -1489 )
+
+[node name="Ork5" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2481, -1410 )
+
+[node name="Ork6" parent="Ork" instance=ExtResource( 18 )]
+position = Vector2( -2569, -1413 )
+
+[node name="AngryAnimal" parent="Ork" instance=ExtResource( 6 )]
+position = Vector2( -2642, -1495 )
+
+[node name="AngryAnimal2" parent="Ork" instance=ExtResource( 6 )]
+position = Vector2( -2650, -1579 )
+
+[node name="Empire" type="Node2D" parent="."]
+
+[node name="OutpostKnight" parent="Empire" instance=ExtResource( 29 )]
+position = Vector2( -6597, -3079 )
+
+[node name="OutpostKnight2" parent="Empire" instance=ExtResource( 29 )]
+position = Vector2( -6581, -1587 )
+
+[node name="Neutral" type="Node" parent="."]
+
+[node name="Dungeon_Enter" parent="." instance=ExtResource( 31 )]
+position = Vector2( -4368, -496 )
+
+[node name="TowerGuard" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3068, -1290 )
+
+[node name="TowerGuard2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3079, -471 )
+
+[node name="TowerGuard3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2047, -1268 )
+
+[node name="TowerGuard4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2018, -466 )

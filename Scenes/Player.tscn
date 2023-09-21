@@ -1,0 +1,1510 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/health_bar_green.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Chat.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://Assets/units2/human/white-mage.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/health_bar_red.png" type="Texture" id=6]
+[ext_resource path="res://Assets/button/equipment.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Menu/MidleMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Images/splash1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/builds_new/empire/gnome/unit_bld_mega_castle.png" type="Texture" id=10]
+[ext_resource path="res://Assets/build/fortress3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/builds_new/vampire/unit_bld_priory.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 18, 24.5 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="Player" type="Area2D" groups=["players"]]
+script = ExtResource( 1 )
+
+[node name="Health" type="TextureProgress" parent="."]
+margin_left = -18.0
+margin_top = -45.0
+margin_right = 18.0
+margin_bottom = -41.0
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana" type="TextureProgress" parent="."]
+margin_left = -18.0
+margin_top = -39.0
+margin_right = 18.0
+margin_bottom = -35.0
+value = 100.0
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 5 )
+
+[node name="NicknameLabel" type="Label" parent="."]
+margin_left = -40.0
+margin_top = 25.0
+margin_right = 40.0
+margin_bottom = 39.0
+text = "nickname"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="."]
+modulate = Color( 0.0666667, 0.141176, 0.937255, 1 )
+margin_left = 18.0
+margin_top = -47.0
+margin_right = 56.0
+margin_bottom = -33.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, -0.5 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Chat" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Chat"]
+self_modulate = Color( 1, 1, 1, 0.882353 )
+margin_left = -630.0
+margin_top = 164.0
+margin_right = -374.0
+margin_bottom = 356.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Chat/Panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 152.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Chat/Panel"]
+margin_left = 8.0
+margin_top = 160.0
+margin_right = 192.0
+margin_bottom = 184.0
+placeholder_text = "Type your message here..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Chat/Panel"]
+margin_left = 192.0
+margin_top = 160.0
+margin_right = 248.0
+margin_bottom = 184.0
+text = "Send"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory"]
+self_modulate = Color( 1, 1, 1, 0.882353 )
+margin_left = -512.0
+margin_top = -256.0
+margin_right = 512.0
+margin_bottom = 256.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemListLabel" type="Label" parent="Inventory/Panel"]
+margin_left = 184.0
+margin_top = 32.0
+margin_right = 245.0
+margin_bottom = 46.0
+text = "Inventory"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Inventory/Panel"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 400.0
+margin_bottom = 448.0
+focus_mode = 0
+size_flags_horizontal = 0
+custom_styles/bg = SubResource( 2 )
+allow_reselect = true
+max_columns = 6
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2( 48, 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList2Label" type="Label" parent="Inventory/Panel"]
+margin_left = 784.0
+margin_top = 32.0
+margin_right = 824.0
+margin_bottom = 46.0
+text = "Shop"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList2" type="ItemList" parent="Inventory/Panel"]
+margin_left = 648.0
+margin_top = 64.0
+margin_right = 984.0
+margin_bottom = 448.0
+focus_mode = 0
+size_flags_horizontal = 0
+custom_styles/bg = SubResource( 2 )
+allow_reselect = true
+max_columns = 6
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2( 48, 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemNameLabel" type="Label" parent="Inventory/Panel"]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 576.0
+margin_bottom = 80.0
+text = "ItemNameLabel"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSprite" type="Sprite" parent="Inventory/Panel"]
+position = Vector2( 512, 128 )
+
+[node name="ItemCountLabel" type="Label" parent="Inventory/Panel"]
+margin_left = 480.0
+margin_top = 176.0
+margin_right = 544.0
+margin_bottom = 190.0
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemDescriptionRichTextLabel" type="RichTextLabel" parent="Inventory/Panel"]
+margin_left = 413.0
+margin_top = 192.0
+margin_right = 640.0
+margin_bottom = 277.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemPriceLabel" type="Label" parent="Inventory/Panel"]
+margin_left = 480.0
+margin_top = 301.0
+margin_right = 544.0
+margin_bottom = 315.0
+grow_horizontal = 2
+text = "Price: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemWeightLabel" type="Label" parent="Inventory/Panel"]
+margin_left = 472.0
+margin_top = 318.0
+margin_right = 547.0
+margin_bottom = 332.0
+grow_horizontal = 2
+text = "Weight: 0kg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Inventory/Panel"]
+margin_left = 480.0
+margin_top = 340.0
+margin_right = 544.0
+margin_bottom = 364.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Inventory/Panel"]
+margin_left = 400.0
+margin_top = 368.0
+margin_right = 640.0
+margin_bottom = 408.0
+min_value = 1.0
+value = 1.0
+tick_count = 2
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Inventory/Panel"]
+margin_left = 414.0
+margin_top = 424.0
+margin_right = 494.0
+margin_bottom = 488.0
+text = "Drop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Use" type="Button" parent="Inventory/Panel"]
+margin_left = 532.0
+margin_top = 424.0
+margin_right = 612.0
+margin_bottom = 488.0
+text = "Use"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -320.0
+margin_right = -530.0
+margin_bottom = -306.0
+text = "Health:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -320.0
+margin_right = -466.0
+margin_bottom = -306.0
+text = "100/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -304.0
+margin_right = -530.0
+margin_bottom = -290.0
+text = "Water:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -304.0
+margin_right = -466.0
+margin_bottom = -290.0
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="Stats"]
+margin_left = -436.0
+margin_top = -320.0
+margin_right = -390.0
+margin_bottom = -306.0
+text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelCountLabel" type="Label" parent="Stats"]
+margin_left = -393.0
+margin_top = -320.0
+margin_right = -347.0
+margin_bottom = -306.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExpLabel" type="Label" parent="Stats"]
+margin_left = -436.0
+margin_top = -302.0
+margin_right = -416.0
+margin_bottom = -288.0
+text = "XP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExpCountLabel" type="Label" parent="Stats"]
+margin_left = -413.0
+margin_top = -302.0
+margin_right = -367.0
+margin_bottom = -288.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyLabel" type="Label" parent="Stats"]
+margin_left = -436.0
+margin_top = -288.0
+margin_right = -400.0
+margin_bottom = -274.0
+text = "Energy:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyCountLabel" type="Label" parent="Stats"]
+margin_left = -384.0
+margin_top = -288.0
+margin_right = -338.0
+margin_bottom = -274.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoodLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -288.0
+margin_right = -530.0
+margin_bottom = -274.0
+text = "Food:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManaLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -273.0
+margin_right = -530.0
+margin_bottom = -259.0
+text = "Mana:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoodCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -288.0
+margin_right = -466.0
+margin_bottom = -274.0
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManaCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -273.0
+margin_right = -466.0
+margin_bottom = -259.0
+text = "100/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -256.0
+margin_right = -530.0
+margin_bottom = -242.0
+text = "Speed:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -256.0
+margin_right = -466.0
+margin_bottom = -242.0
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeightLabel" type="Label" parent="Stats"]
+margin_left = -576.0
+margin_top = -240.0
+margin_right = -530.0
+margin_bottom = -226.0
+text = "Weight:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeightCountLabel" type="Label" parent="Stats"]
+margin_left = -512.0
+margin_top = -240.0
+margin_right = -466.0
+margin_bottom = -226.0
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 389.0
+margin_top = -351.0
+margin_right = 539.0
+margin_bottom = -287.0
+rect_scale = Vector2( 0.85, 1 )
+text = "Inventory"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InventoryButton"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="InventoryButton2" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 295.0
+margin_top = -351.0
+margin_right = 391.0
+margin_bottom = -287.0
+rect_scale = Vector2( 0.85, 1 )
+text = "ACTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InventoryButton2"]
+scale = Vector2( 0.75, 0.75 )
+centered = false
+
+[node name="MapButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 203.0
+margin_top = -351.0
+margin_right = 275.0
+margin_bottom = -287.0
+text = "Map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = -351.0
+margin_right = 628.0
+margin_bottom = -287.0
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton2" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = -271.0
+margin_right = 628.0
+margin_bottom = -207.0
+text = "GO LANDS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton3" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = -191.0
+margin_right = 628.0
+margin_bottom = -127.0
+text = "GO EMPIRE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton4" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = -111.0
+margin_right = 628.0
+margin_bottom = -47.0
+text = "WORLD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton5" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = -31.0
+margin_right = 628.0
+margin_bottom = 33.0
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton6" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = 49.0
+margin_right = 628.0
+margin_bottom = 113.0
+text = "TOWN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton7" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = 288.0
+margin_right = 628.0
+margin_bottom = 352.0
+text = "HEAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton8" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = 210.0
+margin_right = 628.0
+margin_bottom = 274.0
+text = "MOVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton9" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 556.0
+margin_top = 123.0
+margin_right = 628.0
+margin_bottom = 187.0
+text = "UNIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton11" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 472.0
+margin_top = 288.0
+margin_right = 544.0
+margin_bottom = 352.0
+text = "ATTACK2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton12" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 384.0
+margin_top = 288.0
+margin_right = 456.0
+margin_bottom = 352.0
+text = "ATTACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton13" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 290.0
+margin_top = 288.0
+margin_right = 370.0
+margin_bottom = 352.0
+text = "ULTIMATE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton10" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 472.0
+margin_top = 210.0
+margin_right = 544.0
+margin_bottom = 274.0
+text = "TRAP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="."]
+margin_left = -32.0
+margin_top = -312.0
+margin_right = 27.0
+margin_bottom = -298.0
+grow_horizontal = 2
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoTimer" type="Timer" parent="."]
+
+[node name="MapVSlider" type="VSlider" parent="."]
+margin_left = 520.0
+margin_top = -357.0
+margin_right = 538.0
+min_value = 2.0
+max_value = 10.0
+value = 2.0
+rounded = true
+tick_count = 12
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapZoomOutLabel" type="Label" parent="."]
+margin_left = 528.0
+margin_top = -344.0
+margin_right = 621.0
+margin_bottom = -330.0
+text = "Zoom out: x2"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MidleMenu2" parent="." instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 550.0
+
+[node name="MidleMenu" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.5
+margin_top = -122.5
+margin_right = 178.5
+margin_bottom = 122.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MidleMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -538.5
+margin_top = -122.0
+margin_right = 461.5
+margin_bottom = 358.0
+
+[node name="Continue" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.0
+margin_top = -180.0
+margin_bottom = -160.0
+rect_scale = Vector2( 2, 2 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitMenu" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.0
+margin_top = 70.0
+margin_right = -337.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "EXIT TO MAIN MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadServer" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -80.0
+margin_right = 2.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "LOAD FROM SERVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Set_Hardcore" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 180.0
+margin_right = 332.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "SET HARDCORE MODE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Set_Multiplay" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 180.0
+margin_top = -180.0
+margin_right = 327.0
+margin_bottom = -160.0
+rect_scale = Vector2( 2, 2 )
+text = "SET MULTIPLAYER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Set_Singleplay2" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 180.0
+margin_top = -80.0
+margin_right = 327.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "SET SINGLEPLAYER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Set_EasyMode" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 180.0
+margin_top = 70.0
+margin_right = 332.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "SET EASY MODE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadFile" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_right = 2.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "LOAD FROM FILE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveFile" type="Button" parent="MidleMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = 70.0
+margin_right = 2.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "SAVE TO FILE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionMenu" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.5
+margin_top = -122.5
+margin_right = 178.5
+margin_bottom = 122.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ActionMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -538.5
+margin_top = -122.0
+margin_right = 461.5
+margin_bottom = 358.0
+
+[node name="Continue" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.0
+margin_top = 140.0
+margin_bottom = 160.0
+rect_scale = Vector2( 2, 2 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enter" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.0
+margin_top = -180.0
+margin_right = -332.0
+margin_bottom = -160.0
+rect_scale = Vector2( 2, 2 )
+text = "ENTER TO SETTLEMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defence" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -80.0
+margin_right = 5.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "DEFENCE UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guard" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_right = 5.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "TRAIN GUARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Take" type="Button" parent="ActionMenu/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -80.0
+margin_right = 337.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "TAKE RESOURCES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Research" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -80.0
+margin_right = 340.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "RESEARCH MAGIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hire" type="Button" parent="ActionMenu/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = 140.0
+margin_right = 340.0
+margin_bottom = 160.0
+rect_scale = Vector2( 2, 2 )
+text = "HIRE A MERCENARIES"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mining" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.0
+margin_top = -80.0
+margin_right = -329.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "AUTO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Population" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.0
+margin_right = -342.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "EXPAND SETTLEMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -494.5
+margin_top = 70.0
+margin_right = -344.5
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TakeEnergy" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = 70.0
+margin_right = 5.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "TAKE ENERGY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GiveEnergy" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = 70.0
+margin_right = 340.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "GIVE ENERGY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Population2" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_right = 340.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "EXPAND SETTLEMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trade" type="Button" parent="ActionMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -180.0
+margin_right = 5.0
+margin_bottom = -160.0
+rect_scale = Vector2( 2, 2 )
+text = "TRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireCount" type="HSlider" parent="ActionMenu/Panel"]
+visible = false
+margin_left = 690.0
+margin_top = 420.0
+margin_right = 840.0
+margin_bottom = 444.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="ResourcesCount" type="HSlider" parent="ActionMenu/Panel"]
+visible = false
+margin_left = 686.5
+margin_top = 91.0
+margin_right = 836.5
+margin_bottom = 115.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Name" type="Label" parent="ActionMenu/Panel"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "NAME:"
+
+[node name="Name2" type="Label" parent="ActionMenu/Panel"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "NAME:"
+
+[node name="Resource" type="Label" parent="ActionMenu/Panel"]
+margin_left = 602.5
+margin_top = 16.0
+margin_right = 672.5
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "RESOURCE"
+
+[node name="ResourceCount" type="Label" parent="ActionMenu/Panel"]
+margin_left = 738.0
+margin_top = 16.0
+margin_right = 798.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "0000000"
+
+[node name="People" type="Label" parent="ActionMenu/Panel"]
+margin_left = 397.5
+margin_top = 16.0
+margin_right = 439.5
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "PEOPLE:"
+
+[node name="MODE" type="Label" parent="ActionMenu/Panel"]
+margin_left = 854.0
+margin_top = 16.0
+margin_right = 928.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "UPGRADE"
+
+[node name="PeopleCount" type="Label" parent="ActionMenu/Panel"]
+margin_left = 506.5
+margin_top = 16.0
+margin_right = 548.5
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "1"
+
+[node name="UnitMenu" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.5
+margin_top = -122.5
+margin_right = 178.5
+margin_bottom = 122.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="UnitMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -538.5
+margin_top = -122.0
+margin_right = 461.5
+margin_bottom = 358.0
+
+[node name="Continue" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.0
+margin_top = -208.0
+margin_bottom = -188.0
+rect_scale = Vector2( 2, 2 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.0
+margin_top = 70.0
+margin_right = -337.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "VAMPIRE-ROGUE (10000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit1" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.0
+margin_right = -337.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "WARLOCK (50000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit2" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -80.0
+margin_right = 2.0
+margin_bottom = -60.0
+rect_scale = Vector2( 2, 2 )
+text = "HIGH ZOMBI (5000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit3" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_right = 2.0
+margin_bottom = 20.0
+rect_scale = Vector2( 2, 2 )
+text = "SKELETON (1000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit4" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = 70.0
+margin_right = 3.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "LICH (25000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit5" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.0
+margin_top = 140.0
+margin_right = -318.0
+margin_bottom = 160.0
+rect_scale = Vector2( 2, 2 )
+text = "ASTRAL MAG (75000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit6" type="Button" parent="UnitMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = 140.0
+margin_right = 34.0
+margin_bottom = 160.0
+rect_scale = Vector2( 2, 2 )
+text = "HIGH VAMPIRE (100000)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UnitMenu/Panel"]
+margin_left = 4.0
+margin_top = 100.0
+margin_right = 496.0
+margin_bottom = 116.0
+rect_scale = Vector2( 2, 2 )
+text = "SELECT UNIT FOR TELEPORT FROM YOUR SETTLEMENT TO HERE(NEED ENERGY)"
+
+[node name="WorldMap" type="Control" parent="."]
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 580.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="WorldMap"]
+margin_right = 1220.0
+margin_bottom = 710.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="WorldMap/Panel"]
+position = Vector2( 620, 365 )
+scale = Vector2( 0.95, 0.95 )
+texture = ExtResource( 9 )
+
+[node name="Continue" type="Button" parent="WorldMap/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -610.0
+margin_top = -355.0
+margin_right = -564.0
+margin_bottom = -335.0
+rect_scale = Vector2( 2, 2 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EMPIRE" type="Button" parent="WorldMap/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 13.0
+margin_right = -76.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="WorldMap/Panel"]
+position = Vector2( 510, 368 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="DarkEMPIRE" type="Button" parent="WorldMap/Panel"]
+margin_left = 540.0
+margin_top = 80.0
+margin_right = 564.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite3" type="Sprite" parent="WorldMap/Panel"]
+position = Vector2( 540, 80 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="NEUTRAL" type="Button" parent="WorldMap/Panel"]
+margin_left = 840.0
+margin_top = 174.0
+margin_right = 864.0
+margin_bottom = 198.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite4" type="Sprite" parent="WorldMap/Panel"]
+position = Vector2( 840, 174 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+centered = false
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Player_area_exited"]
+[connection signal="focus_entered" from="Chat/Panel/LineEdit" to="Chat" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="Chat/Panel/LineEdit" to="Chat" method="_on_LineEdit_focus_exited"]
+[connection signal="text_entered" from="Chat/Panel/LineEdit" to="Chat" method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="Chat/Panel/Button" to="Chat" method="_on_Button_pressed"]
+[connection signal="item_selected" from="Inventory/Panel/ItemList" to="Inventory" method="_on_ItemList_item_selected"]
+[connection signal="item_selected" from="Inventory/Panel/ItemList2" to="Inventory" method="_on_ItemList2_item_selected"]
+[connection signal="value_changed" from="Inventory/Panel/HSlider" to="Inventory" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="Inventory/Panel/Button" to="Inventory" method="_on_Button_pressed"]
+[connection signal="pressed" from="Inventory/Panel/Use" to="Inventory" method="_on_Use_pressed"]
+[connection signal="button_down" from="InventoryButton" to="." method="_on_InventoryButton_button_down"]
+[connection signal="mouse_entered" from="InventoryButton" to="." method="_on_InventoryButton_mouse_entered"]
+[connection signal="mouse_exited" from="InventoryButton" to="." method="_on_InventoryButton_mouse_exited"]
+[connection signal="button_down" from="InventoryButton2" to="." method="_on_InventoryButton2_button_down"]
+[connection signal="mouse_entered" from="InventoryButton2" to="." method="_on_InventoryButton_mouse_entered"]
+[connection signal="mouse_exited" from="InventoryButton2" to="." method="_on_InventoryButton_mouse_exited"]
+[connection signal="button_down" from="MapButton" to="." method="_on_MapButton_button_down"]
+[connection signal="mouse_entered" from="MapButton" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MapButton" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MapButton" to="." method="_on_MapButton_pressed"]
+[connection signal="mouse_entered" from="MenuButton" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="mouse_entered" from="MenuButton2" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton2" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton2" to="." method="_on_MenuButton2_pressed"]
+[connection signal="mouse_entered" from="MenuButton3" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton3" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton3" to="." method="_on_MenuButton3_pressed"]
+[connection signal="mouse_entered" from="MenuButton4" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton4" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton4" to="." method="_on_MenuButton4_pressed"]
+[connection signal="mouse_entered" from="MenuButton5" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton5" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton5" to="." method="_on_MenuButton5_pressed"]
+[connection signal="mouse_entered" from="MenuButton6" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton6" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton6" to="." method="_on_MenuButton6_pressed"]
+[connection signal="mouse_entered" from="MenuButton7" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton7" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton7" to="." method="_on_MenuButton7_pressed"]
+[connection signal="mouse_entered" from="MenuButton8" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton8" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton8" to="." method="_on_MenuButton8_pressed"]
+[connection signal="mouse_entered" from="MenuButton9" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton9" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton9" to="." method="_on_MenuButton9_pressed"]
+[connection signal="mouse_entered" from="MenuButton11" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton11" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton11" to="." method="_on_MenuButton11_pressed"]
+[connection signal="mouse_entered" from="MenuButton12" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton12" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton12" to="." method="_on_MenuButton12_pressed"]
+[connection signal="mouse_entered" from="MenuButton13" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton13" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton13" to="." method="_on_MenuButton13_pressed"]
+[connection signal="mouse_entered" from="MenuButton10" to="." method="_on_MapButton_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButton10" to="." method="_on_MapButton_mouse_exited"]
+[connection signal="pressed" from="MenuButton10" to="." method="_on_MenuButton10_pressed"]
+[connection signal="value_changed" from="MapVSlider" to="." method="_on_MapVSlider_value_changed"]
+[connection signal="pressed" from="MidleMenu/Panel/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/ExitMenu" to="." method="_on_ExitMenu_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/LoadServer" to="." method="_on_LoadServer_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/Set_Hardcore" to="." method="_on_Set_Hardcore_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/Set_Multiplay" to="." method="_on_Set_Multiplay_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/Set_Singleplay2" to="." method="_on_Set_Singleplay_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/Set_EasyMode" to="." method="_on_Set_EasyMode_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/LoadFile" to="." method="_on_LoadFile_pressed"]
+[connection signal="pressed" from="MidleMenu/Panel/SaveFile" to="." method="_on_SaveFile_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Enter" to="." method="_on_Enter_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Defence" to="." method="_on_Defence_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Guard" to="." method="_on_Guard_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Research" to="." method="_on_Research_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Mining" to="." method="_on_Mining_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Population" to="." method="_on_Population_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/TakeEnergy" to="." method="_on_TakeEnergy_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/GiveEnergy" to="." method="_on_GiveEnergy_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Population2" to="." method="_on_Population_pressed"]
+[connection signal="pressed" from="ActionMenu/Panel/Trade" to="." method="_on_Trade_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit" to="." method="_on_Unit_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit1" to="." method="_on_Unit1_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit2" to="." method="_on_Unit2_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit3" to="." method="_on_Unit3_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit4" to="." method="_on_Unit4_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit5" to="." method="_on_Unit5_pressed"]
+[connection signal="pressed" from="UnitMenu/Panel/Unit6" to="." method="_on_Unit6_pressed"]
+[connection signal="pressed" from="WorldMap/Panel/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="WorldMap/Panel/EMPIRE" to="." method="_on_EMPIRE_pressed"]
+[connection signal="pressed" from="WorldMap/Panel/DarkEMPIRE" to="." method="_on_DarkEMPIRE_pressed"]
+[connection signal="pressed" from="WorldMap/Panel/NEUTRAL" to="." method="_on_NEUTRAL_pressed"]

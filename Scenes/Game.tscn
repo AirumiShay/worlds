@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=5]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Location" type="Node2D" parent="."]
+
+[node name="Empire" type="Node2D" parent="."]
+visible = false
+
+[node name="Grass" type="Node2D" parent="Empire"]
+
+[node name="Dark" type="Node2D" parent="."]
+visible = false
+
+[node name="Neutral" type="Node2D" parent="."]
+visible = false
+
+[node name="Animal" type="Node2D" parent="."]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

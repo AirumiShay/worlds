@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/lands/1/poselenie_blue.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Oldest/Build_Hutor_blue.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Oldest/Build_Village_blue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Nature/Grass2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/lands/lands5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/lands/lands0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/lands/lands1.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Nature/Grass.tscn" type="PackedScene" id=8]
+
+[node name="MapMedium" type="Area2D"]
+
+[node name="Lands_Neutral9" type="Sprite" parent="."]
+position = Vector2( 0, 1060 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Lands_Neutral8" type="Sprite" parent="."]
+position = Vector2( 0, 400 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Lands_Neutral" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Lands_Neutral4" type="Sprite" parent="."]
+position = Vector2( 800, 800 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Lands_Neutral3" type="Sprite" parent="."]
+position = Vector2( 1529, -30 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Lands_Neutral7" type="Sprite" parent="."]
+position = Vector2( 1614, 1215 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Lands_Neutral5" type="Sprite" parent="."]
+position = Vector2( 596, 1212 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Lands_Neutral6" type="Sprite" parent="."]
+position = Vector2( 596, 2456 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Lands_Neutral2" type="Sprite" parent="."]
+position = Vector2( 153, 800 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Build_Village_Blue" parent="." instance=ExtResource( 3 )]
+position = Vector2( 307, 3 )
+
+[node name="Build_Hutor_Blue" parent="." instance=ExtResource( 2 )]
+position = Vector2( 614, 162 )
+
+[node name="Build_Hutor_Blue2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 614, 3 )
+
+[node name="Grass" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1591, 451 )
+
+[node name="Grass2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1529, 451 )
+
+[node name="Grass3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1591, 387 )
+
+[node name="Grass5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1529, 258 )
+
+[node name="Grass6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1529, 129 )
+
+[node name="Grass7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1655, 258 )
+
+[node name="Grass8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1655, 129 )
+
+[node name="Grass9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1529, 0 )
+
+[node name="Grass10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1655, 0 )
+
+[node name="Grass4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1529, 387 )
+
+[node name="Grass11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 295, 1862 )
+scale = Vector2( 2.3, 2.3 )
