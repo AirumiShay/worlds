@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/animal/unit_neutral_animal_sheep2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Animal/Pig_small.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.5, 21.5 )
+
+[node name="Sheep" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 19.5, 22.5 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = -4.0
+margin_top = -9.0
+margin_right = 46.0
+value = 100.0
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="TimerNewBuild" type="Timer" parent="." index="5"]
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="TimerNewBuild" to="." method="_on_TimerNewBuild_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
