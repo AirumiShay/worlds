@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni-Ekaterina.mp3-a8e4d6ce415915809080715c825a44ca.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni-Ekaterina.mp3"
+dest_files=[ "res://.import/Spletni-Ekaterina.mp3-a8e4d6ce415915809080715c825a44ca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

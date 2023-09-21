@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GoodBye-Oksana.mp3-07e81b615b6b45bc5fcbc8e2725020b4.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/GoodBye-Oksana.mp3"
+dest_files=[ "res://.import/GoodBye-Oksana.mp3-07e81b615b6b45bc5fcbc8e2725020b4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

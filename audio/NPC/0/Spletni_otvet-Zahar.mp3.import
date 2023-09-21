@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni_otvet-Zahar.mp3-5a2331ee228728e15d0ee6c8f34da9ad.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni_otvet-Zahar.mp3"
+dest_files=[ "res://.import/Spletni_otvet-Zahar.mp3-5a2331ee228728e15d0ee6c8f34da9ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

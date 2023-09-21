@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hello_Alla.mp3-134cc0ac97378d18b99ebb8b9ba290ec.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Hello_Alla.mp3"
+dest_files=[ "res://.import/Hello_Alla.mp3-134cc0ac97378d18b99ebb8b9ba290ec.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

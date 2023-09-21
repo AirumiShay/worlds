@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni-Oksana.mp3-3b4c15a16780f5b392d5f2aedb2e862d.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni-Oksana.mp3"
+dest_files=[ "res://.import/Spletni-Oksana.mp3-3b4c15a16780f5b392d5f2aedb2e862d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

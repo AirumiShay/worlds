@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni-m0.mp3-553b655fad31296d2952f215c926178e.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni-m0.mp3"
+dest_files=[ "res://.import/Spletni-m0.mp3-553b655fad31296d2952f215c926178e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

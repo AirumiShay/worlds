@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fire_impact1.wav-c909b9c932856662c9d89d7fdc6ff896.sample"
+
+[deps]
+
+source_file="res://audio/sounds/preload_sfx/fire_impact1.wav"
+dest_files=[ "res://.import/fire_impact1.wav-c909b9c932856662c9d89d7fdc6ff896.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

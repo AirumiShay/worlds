@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GoodBye-Ermil.mp3-7556252c966eff627c2f8b5c2f18a450.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/GoodBye-Ermil.mp3"
+dest_files=[ "res://.import/GoodBye-Ermil.mp3-7556252c966eff627c2f8b5c2f18a450.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

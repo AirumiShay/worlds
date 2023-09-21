@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni-Jane.mp3-07de3b9f30edc03b5a7e6d7772c6d0ad.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni-Jane.mp3"
+dest_files=[ "res://.import/Spletni-Jane.mp3-07de3b9f30edc03b5a7e6d7772c6d0ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

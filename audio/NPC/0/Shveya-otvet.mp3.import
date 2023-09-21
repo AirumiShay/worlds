@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Shveya-otvet.mp3-791901d70128d4fe1ddeb1869d1ee4d4.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Shveya-otvet.mp3"
+dest_files=[ "res://.import/Shveya-otvet.mp3-791901d70128d4fe1ddeb1869d1ee4d4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

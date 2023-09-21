@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GoodBye-m1.mp3-a91a7a94cecc444505d3f9ec0799190a.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/GoodBye-m1.mp3"
+dest_files=[ "res://.import/GoodBye-m1.mp3-a91a7a94cecc444505d3f9ec0799190a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

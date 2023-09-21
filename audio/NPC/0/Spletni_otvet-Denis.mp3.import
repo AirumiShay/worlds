@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spletni_otvet-Denis.mp3-c03f986ab1e9f05f4008480c5b746452.mp3str"
+
+[deps]
+
+source_file="res://audio/NPC/0/Spletni_otvet-Denis.mp3"
+dest_files=[ "res://.import/Spletni_otvet-Denis.mp3-c03f986ab1e9f05f4008480c5b746452.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

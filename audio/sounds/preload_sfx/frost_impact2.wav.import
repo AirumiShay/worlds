@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/frost_impact2.wav-b849c43b35ee00d36a8dff3390c63249.sample"
+
+[deps]
+
+source_file="res://audio/sounds/preload_sfx/frost_impact2.wav"
+dest_files=[ "res://.import/frost_impact2.wav-b849c43b35ee00d36a8dff3390c63249.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
