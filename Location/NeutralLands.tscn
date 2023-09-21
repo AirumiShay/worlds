@@ -1,0 +1,1252 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/Build/Storage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Race/Elf_Merchant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/AngryAnimal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Build/FortressKobold.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/MapMedium.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Images/shop.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Oldest/Build_Castle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/build/village_blue.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/bag.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Build/VillageExile.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Race/Elf_Ranger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Walls/Grane.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Race/Bag_NPC.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Race/Worker.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Build/Avanpost.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Race/Cyclop.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Race/DarkRider.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Build/Start_Town.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scripts/Town/Moonsberg.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Dungeon/Dungeon_Enter.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scripts/Town/Yolensberg.gd" type="Script" id=32]
+[ext_resource path="res://audio/NPC/0/Hello_Katya.mp3" type="AudioStream" id=33]
+[ext_resource path="res://Scenes/Race/OrkLeader.tscn" type="PackedScene" id=34]
+[ext_resource path="res://audio/NPC/0/Hello_Alla.mp3" type="AudioStream" id=35]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 110.5, 99 )
+
+[node name="NeutralLands" type="Node2D"]
+
+[node name="MapMedium" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1093, -1410 )
+
+[node name="Merchant" type="Node2D" parent="."]
+
+[node name="Moonsberg" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( 1604, -775 )
+script = ExtResource( 30 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Moonsberg"]
+position = Vector2( 26, 25 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Moonsberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Moonsberg"]
+margin_left = 67.0
+margin_top = 1.0
+margin_right = 139.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 464, 56 )
+text = "Moonsberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wellcome" type="AudioStreamPlayer" parent="Merchant/Moonsberg"]
+stream = ExtResource( 35 )
+
+[node name="Timer" type="Timer" parent="Merchant/Moonsberg"]
+
+[node name="Yolensberg" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( 618, 1743 )
+script = ExtResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Yolensberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Yolensberg"]
+margin_left = 64.0
+margin_top = 88.0
+margin_right = 136.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 464, 56 )
+text = "Yolensberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Merchant/Yolensberg"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Wellcome" type="AudioStreamPlayer" parent="Merchant/Yolensberg"]
+stream = ExtResource( 33 )
+
+[node name="Timer" type="Timer" parent="Merchant/Yolensberg"]
+
+[node name="Yolensberg2" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -660, 300 )
+script = ExtResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Yolensberg2"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Yolensberg2"]
+margin_left = 40.0
+margin_top = -14.0
+margin_right = 112.0
+margin_bottom = 6.0
+rect_pivot_offset = Vector2( 464, 56 )
+text = "Olansberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Merchant/Yolensberg2"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Wellcome" type="AudioStreamPlayer" parent="Merchant/Yolensberg2"]
+stream = ExtResource( 33 )
+
+[node name="Timer" type="Timer" parent="Merchant/Yolensberg2"]
+
+[node name="Newtown" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -358, -1110 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Newtown"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Newtown"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Newtown"]
+margin_left = 63.0
+margin_top = 9.0
+margin_right = 143.0
+margin_bottom = 29.0
+text = "ElyinaTemple"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sunberg" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -840, 445 )
+
+[node name="Build_Castle" parent="Merchant/Sunberg" instance=ExtResource( 10 )]
+position = Vector2( 40, 4 )
+scale = Vector2( 1.5, 2.3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Sunberg"]
+position = Vector2( 115.5, 82.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Sunberg"]
+margin_left = 70.0
+margin_top = -29.0
+margin_right = 150.0
+margin_bottom = -9.0
+text = "Sunsberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Qubic" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -500, -1430 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Qubic"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Qubic"]
+position = Vector2( 97.5, 102.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Qubic"]
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 29.0
+text = "Grassberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keningsberg" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -810, -1420 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Keningsberg"]
+position = Vector2( 100, 100 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Keningsberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="TownName" type="Label" parent="Merchant/Keningsberg"]
+margin_left = 50.0
+margin_top = 24.0
+margin_right = 138.0
+margin_bottom = 44.0
+text = "Keningsberg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExileMerchant" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -99, -1600 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/ExileMerchant"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/ExileMerchant"]
+position = Vector2( 70, 62 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/ExileMerchant"]
+margin_left = 221.0
+margin_top = 162.0
+margin_right = 309.0
+margin_bottom = 182.0
+text = "BravesBerg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VillageMerchant" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -198, -1270 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/VillageMerchant"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/VillageMerchant"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/VillageMerchant"]
+margin_left = 56.0
+margin_top = 11.0
+margin_right = 144.0
+margin_bottom = 31.0
+text = "Mirror"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VillageExile1" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -5064, -129 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/VillageExile1"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/VillageExile1"]
+position = Vector2( 155.5, 159 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/VillageExile1"]
+margin_left = 56.0
+margin_top = 11.0
+margin_right = 144.0
+margin_bottom = 31.0
+text = "VillageExile Berta"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reebeca" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -503, -1269 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Reebeca"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Reebeca"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Reebeca"]
+margin_left = 57.0
+margin_top = 9.0
+margin_right = 145.0
+margin_bottom = 29.0
+text = "GratenBerg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bestberg" type="Area2D" parent="Merchant" groups=["shops"]]
+position = Vector2( -194, -1104 )
+
+[node name="Sprite" type="Sprite" parent="Merchant/Bestberg"]
+visible = false
+position = Vector2( 100, 100 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant/Bestberg"]
+position = Vector2( 100, 100 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Merchant/Bestberg"]
+margin_left = 55.0
+margin_top = 5.0
+margin_right = 143.0
+margin_bottom = 25.0
+text = "Katana"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MerchantExile" parent="." instance=ExtResource( 2 )]
+position = Vector2( 625, 490 )
+
+[node name="VillageExile" parent="MerchantExile" instance=ExtResource( 13 )]
+position = Vector2( 4, -58 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="MerchantExile2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 625, 490 )
+
+[node name="VillageExile" parent="MerchantExile2" instance=ExtResource( 13 )]
+position = Vector2( 4, -58 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Animal" type="Node2D" parent="."]
+
+[node name="AngryAnimal10" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -1199, -811 )
+
+[node name="AngryAnimal11" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( 886, 371 )
+
+[node name="AngryAnimal12" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -330, -1696 )
+
+[node name="AngryAnimal13" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -446, -1717 )
+
+[node name="AngryAnimal14" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -424, -1636 )
+
+[node name="AngryAnimal15" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -382, -1765 )
+
+[node name="AngryAnimal16" parent="Animal" instance=ExtResource( 6 )]
+position = Vector2( -345, -1634 )
+
+[node name="Elf2" type="Node2D" parent="."]
+
+[node name="Nature" type="Node2D" parent="."]
+
+[node name="Grane6" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, 68 )
+
+[node name="Grane7" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, 136 )
+
+[node name="Grane8" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, 198 )
+
+[node name="Grane9" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, 257 )
+
+[node name="Grane10" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, 0 )
+
+[node name="Grane11" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 393 )
+
+[node name="Grane12" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 461 )
+
+[node name="Grane15" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, 325 )
+
+[node name="Grane13" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 597 )
+
+[node name="Grane14" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 665 )
+
+[node name="Grane16" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 733 )
+
+[node name="Grane17" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 801 )
+
+[node name="Grane18" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 529 )
+
+[node name="Grane19" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 937 )
+
+[node name="Grane20" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1005 )
+
+[node name="Grane21" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -1005, 869 )
+
+[node name="Grane22" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -464 )
+
+[node name="Grane23" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -396 )
+
+[node name="Grane24" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -334 )
+
+[node name="Grane25" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -275 )
+
+[node name="Grane26" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -532 )
+
+[node name="Grane27" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -139 )
+
+[node name="Grane28" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -71 )
+
+[node name="Grane29" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -207 )
+
+[node name="Grane30" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -986 )
+
+[node name="Grane36" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -593 )
+
+[node name="Grane38" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -909, -1420 )
+
+[node name="Grane39" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -909, -1352 )
+
+[node name="Grane40" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1388 )
+
+[node name="Grane41" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1329 )
+
+[node name="Grane42" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -979, -1356 )
+
+[node name="Grane46" parent="Nature" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1019, -1342 )
+
+[node name="Grane47" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -5157, -176 )
+
+[node name="Grane48" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -5026, -176 )
+
+[node name="Grane49" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4898, -176 )
+
+[node name="Grane50" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4767, -176 )
+
+[node name="Grane51" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -5157, 570 )
+
+[node name="Grane52" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -5026, 570 )
+
+[node name="Grane53" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4898, 570 )
+
+[node name="Grane54" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4767, 570 )
+
+[node name="Grane55" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4703, -180 )
+
+[node name="Grane56" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4572, -180 )
+
+[node name="Grane57" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4444, -180 )
+
+[node name="Grane58" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4313, -180 )
+
+[node name="Grane59" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4249, -180 )
+
+[node name="Grane60" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4118, -180 )
+
+[node name="Grane61" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3990, -180 )
+
+[node name="Grane62" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3859, -180 )
+
+[node name="Grane63" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3795, -180 )
+
+[node name="Grane64" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3664, -180 )
+
+[node name="Grane65" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3536, -180 )
+
+[node name="Grane66" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3405, -180 )
+
+[node name="Grane67" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3341, -180 )
+
+[node name="Grane68" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3210, -180 )
+
+[node name="Grane69" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3082, -180 )
+
+[node name="Grane70" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4636, 570 )
+
+[node name="Grane71" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4508, 570 )
+
+[node name="Grane72" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4377, 570 )
+
+[node name="Grane73" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4313, 570 )
+
+[node name="Grane74" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4182, 570 )
+
+[node name="Grane75" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -4054, 570 )
+
+[node name="Grane76" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3923, 570 )
+
+[node name="Grane77" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3859, 570 )
+
+[node name="Grane78" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3728, 570 )
+
+[node name="Grane79" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3600, 570 )
+
+[node name="Grane80" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3469, 570 )
+
+[node name="Grane81" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3405, 570 )
+
+[node name="Grane82" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3274, 570 )
+
+[node name="Grane83" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( -3146, 570 )
+
+[node name="Grane84" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1236 )
+
+[node name="Grane85" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1168 )
+
+[node name="Grane86" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1106 )
+
+[node name="Grane87" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1047 )
+
+[node name="Grane88" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -911 )
+
+[node name="Grane89" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -843 )
+
+[node name="Grane90" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -979 )
+
+[node name="Grane91" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane92" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane93" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -577 )
+
+[node name="Grane94" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -518 )
+
+[node name="Grane95" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane96" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -382 )
+
+[node name="Grane97" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -314 )
+
+[node name="Grane98" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, -450 )
+
+[node name="Grane99" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1508 )
+
+[node name="Grane100" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1440 )
+
+[node name="Grane101" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 747 )
+
+[node name="Grane102" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 806 )
+
+[node name="Grane103" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 942 )
+
+[node name="Grane104" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1010 )
+
+[node name="Grane105" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 874 )
+
+[node name="Grane106" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane107" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane108" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 416 )
+
+[node name="Grane109" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 475 )
+
+[node name="Grane110" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane111" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 611 )
+
+[node name="Grane112" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 679 )
+
+[node name="Grane113" parent="Nature" instance=ExtResource( 16 )]
+position = Vector2( 1900, 543 )
+
+[node name="Nature2" type="Node2D" parent="."]
+
+[node name="Grane6" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1676 )
+
+[node name="Grane7" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1744 )
+
+[node name="Grane8" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1812 )
+
+[node name="Grane9" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1871 )
+
+[node name="Grane10" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, 0 )
+
+[node name="Grane11" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 2007 )
+
+[node name="Grane12" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1073 )
+
+[node name="Grane15" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1939 )
+
+[node name="Grane13" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1209 )
+
+[node name="Grane14" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1277 )
+
+[node name="Grane16" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1413 )
+
+[node name="Grane17" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1472 )
+
+[node name="Grane18" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1141 )
+
+[node name="Grane19" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1608 )
+
+[node name="Grane20" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1345 )
+
+[node name="Grane21" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -1005, 1540 )
+
+[node name="Grane22" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -464 )
+
+[node name="Grane23" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -396 )
+
+[node name="Grane24" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -334 )
+
+[node name="Grane25" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -275 )
+
+[node name="Grane26" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -532 )
+
+[node name="Grane27" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -139 )
+
+[node name="Grane28" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -71 )
+
+[node name="Grane29" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -207 )
+
+[node name="Grane30" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -986 )
+
+[node name="Grane31" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -918 )
+
+[node name="Grane32" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -856 )
+
+[node name="Grane33" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -797 )
+
+[node name="Grane34" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1059, -1054 )
+
+[node name="Grane35" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -661 )
+
+[node name="Grane36" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -593 )
+
+[node name="Grane37" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -729 )
+
+[node name="Grane38" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -909, -1420 )
+
+[node name="Grane39" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -909, -1352 )
+
+[node name="Grane40" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1388 )
+
+[node name="Grane41" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1329 )
+
+[node name="Grane42" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -979, -1356 )
+
+[node name="Grane46" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1019, -1342 )
+
+[node name="Grane43" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1193 )
+
+[node name="Grane44" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1125 )
+
+[node name="Grane45" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -1055, -1261 )
+
+[node name="Grane47" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5093, -176 )
+
+[node name="Grane48" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4962, -176 )
+
+[node name="Grane49" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4834, -176 )
+
+[node name="Grane50" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, -180 )
+
+[node name="Grane51" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, -112 )
+
+[node name="Grane52" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, -44 )
+
+[node name="Grane53" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 24 )
+
+[node name="Grane54" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 91 )
+
+[node name="Grane55" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 159 )
+
+[node name="Grane56" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 227 )
+
+[node name="Grane57" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 295 )
+
+[node name="Grane58" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 363 )
+
+[node name="Grane59" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 431 )
+
+[node name="Grane60" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 499 )
+
+[node name="Grane65" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, -108 )
+
+[node name="Grane66" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 28 )
+
+[node name="Grane67" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 95 )
+
+[node name="Grane68" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 163 )
+
+[node name="Grane69" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 231 )
+
+[node name="Grane70" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 299 )
+
+[node name="Grane71" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 367 )
+
+[node name="Grane72" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 435 )
+
+[node name="Grane73" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5157, 503 )
+
+[node name="Grane74" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 7 )
+
+[node name="Grane83" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 69 )
+
+[node name="Grane75" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 143 )
+
+[node name="Grane76" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 210 )
+
+[node name="Grane77" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 278 )
+
+[node name="Grane78" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 346 )
+
+[node name="Grane79" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 414 )
+
+[node name="Grane80" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 482 )
+
+[node name="Grane81" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 550 )
+
+[node name="Grane82" parent="Nature2" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -22905, 618 )
+
+[node name="Grane61" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -2954, 567 )
+
+[node name="Grane108" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3018, 567 )
+
+[node name="Grane62" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -5093, 570 )
+
+[node name="Grane63" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4962, 570 )
+
+[node name="Grane64" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4834, 570 )
+
+[node name="Grane84" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4639, -180 )
+
+[node name="Grane85" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4508, -180 )
+
+[node name="Grane86" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4380, -180 )
+
+[node name="Grane87" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4185, -180 )
+
+[node name="Grane88" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4054, -180 )
+
+[node name="Grane89" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3926, -180 )
+
+[node name="Grane90" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3731, -180 )
+
+[node name="Grane91" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3600, -180 )
+
+[node name="Grane92" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3472, -180 )
+
+[node name="Grane93" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3277, -180 )
+
+[node name="Grane94" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3146, -180 )
+
+[node name="Grane95" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3018, -180 )
+
+[node name="Grane96" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4703, 570 )
+
+[node name="Grane97" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4572, 570 )
+
+[node name="Grane98" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4444, 570 )
+
+[node name="Grane99" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4249, 570 )
+
+[node name="Grane100" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -4118, 570 )
+
+[node name="Grane101" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3990, 570 )
+
+[node name="Grane102" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3795, 570 )
+
+[node name="Grane103" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3664, 570 )
+
+[node name="Grane104" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3536, 570 )
+
+[node name="Grane105" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3341, 570 )
+
+[node name="Grane106" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3210, 570 )
+
+[node name="Grane107" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( -3082, 570 )
+
+[node name="Grane109" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1372 )
+
+[node name="Grane110" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -1304 )
+
+[node name="Grane111" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -246 )
+
+[node name="Grane112" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -187 )
+
+[node name="Grane113" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -51 )
+
+[node name="Grane114" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 17 )
+
+[node name="Grane115" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, -119 )
+
+[node name="Grane116" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -707 )
+
+[node name="Grane117" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -639 )
+
+[node name="Grane118" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 85 )
+
+[node name="Grane119" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 144 )
+
+[node name="Grane120" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1896, -775 )
+
+[node name="Grane121" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 280 )
+
+[node name="Grane122" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 348 )
+
+[node name="Grane123" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 212 )
+
+[node name="Grane124" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1811 )
+
+[node name="Grane125" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1879 )
+
+[node name="Grane126" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1941 )
+
+[node name="Grane127" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 2000 )
+
+[node name="Grane128" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1146 )
+
+[node name="Grane129" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1214 )
+
+[node name="Grane130" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1078 )
+
+[node name="Grane131" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1350 )
+
+[node name="Grane132" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1418 )
+
+[node name="Grane133" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1480 )
+
+[node name="Grane134" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1539 )
+
+[node name="Grane135" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1282 )
+
+[node name="Grane136" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1675 )
+
+[node name="Grane137" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1743 )
+
+[node name="Grane138" parent="Nature2" instance=ExtResource( 16 )]
+position = Vector2( 1900, 1607 )
+
+[node name="MagFire" type="Node2D" parent="."]
+
+[node name="Paladin" type="Node2D" parent="."]
+
+[node name="Kobold" type="Node2D" parent="."]
+
+[node name="FortressKobold" parent="Kobold" instance=ExtResource( 7 )]
+position = Vector2( 490, -1996 )
+
+[node name="Dark" type="Node2D" parent="."]
+
+[node name="DarkRider" type="Node2D" parent="."]
+
+[node name="Exile" type="Node2D" parent="."]
+
+[node name="Temple_old" parent="Exile" instance=ExtResource( 27 )]
+position = Vector2( -3315, -91 )
+
+[node name="DarkRider" parent="Exile" instance=ExtResource( 26 )]
+position = Vector2( -829, -1108 )
+
+[node name="DarkRider2" parent="Exile" instance=ExtResource( 26 )]
+position = Vector2( 458, -97 )
+
+[node name="DarkRider3" parent="Exile" instance=ExtResource( 26 )]
+position = Vector2( 888, -1332 )
+
+[node name="DarkRider4" parent="Exile" instance=ExtResource( 26 )]
+position = Vector2( -504, -867 )
+
+[node name="BuildVillage" type="Node2D" parent="."]
+
+[node name="BuildFarm" type="Node2D" parent="."]
+
+[node name="BuildFortress" type="Node2D" parent="."]
+
+[node name="BuildTemple" type="Node2D" parent="."]
+
+[node name="BuildMagicTower" type="Node2D" parent="."]
+
+[node name="BuildCastle" type="Node2D" parent="."]
+
+[node name="BuildCapital" type="Node2D" parent="."]
+
+[node name="Bags" type="Node2D" parent="."]
+
+[node name="Elf" type="Node2D" parent="."]
+
+[node name="PlayerNPC" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -361, -1534 )
+
+[node name="PlayerNPC6" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -223, -1625 )
+
+[node name="PlayerNPC7" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -239, -1710 )
+
+[node name="PlayerNPC8" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -253, -1805 )
+
+[node name="PlayerNPC9" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -379, -1852 )
+
+[node name="PlayerNPC10" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -499, -1799 )
+
+[node name="PlayerNPC11" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -498, -1716 )
+
+[node name="PlayerNPC12" parent="Elf" instance=ExtResource( 14 )]
+position = Vector2( -543, -1606 )
+
+[node name="Ork" type="Node2D" parent="."]
+
+[node name="OrkLeader" parent="Ork" instance=ExtResource( 34 )]
+position = Vector2( -4756, -2543 )
+
+[node name="Worker_blue" parent="." instance=ExtResource( 19 )]
+position = Vector2( 5669, -3221 )
+
+[node name="Neutral" type="Node" parent="."]
+
+[node name="Avanpost" parent="Neutral" instance=ExtResource( 22 )]
+position = Vector2( 205, -1771 )
+
+[node name="Cyclop" parent="Neutral" instance=ExtResource( 23 )]
+position = Vector2( 343, -1786 )
+
+[node name="DarkRider2" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( 458, -793 )
+
+[node name="DarkRider" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( -2728, -3514 )
+
+[node name="DarkRider3" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( 3796, -3499 )
+
+[node name="DarkRider4" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( -3574, -2170 )
+
+[node name="DarkRider5" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( -885, -2351 )
+
+[node name="DarkRider6" parent="Neutral" instance=ExtResource( 26 )]
+position = Vector2( 912, -2351 )
+
+[node name="Dungeon_Enter" parent="." instance=ExtResource( 31 )]
+position = Vector2( -325, 883 )
+
+[node name="Bag_NPC3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 211, 2062 )
+
+[node name="Bag_NPC4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 115, 1508 )
+
+[node name="Storage" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4822, 1041 )
+
+[connection signal="finished" from="Merchant/Moonsberg/Wellcome" to="Merchant/Moonsberg" method="_on_Wellcome_finished"]
+[connection signal="timeout" from="Merchant/Moonsberg/Timer" to="Merchant/Moonsberg" method="_on_Timer_timeout"]
+[connection signal="finished" from="Merchant/Yolensberg/Wellcome" to="Merchant/Yolensberg" method="_on_Wellcome_finished"]
+[connection signal="timeout" from="Merchant/Yolensberg/Timer" to="Merchant/Yolensberg" method="_on_Timer_timeout"]
+[connection signal="finished" from="Merchant/Yolensberg2/Wellcome" to="Merchant/Yolensberg2" method="_on_Wellcome_finished"]
+[connection signal="timeout" from="Merchant/Yolensberg2/Timer" to="Merchant/Yolensberg2" method="_on_Timer_timeout"]

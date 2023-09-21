@@ -1,0 +1,377 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/builds_new/vampire/unit_bld_priory.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/player.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/health_bar_green.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/health_bar_red.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=2]
+script/source = "
+extends \"res://Scripts/Unit/npc_player_control.gd\"
+
+
+#это замок вампиров - в нём живут Высшие вампиры
+onready var _url_data:String = \"\"
+onready var _data:Dictionary = Dictionary()
+var _name:String
+var npc_god = false
+var vampire_count = 0
+var energy_farm = 75
+var max_vampire_count = 10
+var max_resource = 50000 # помещается в этом здании ресурсов
+var resource = 0 # накоплено ресурсов
+var level_farm = 0 # равен количеству лет жизни этой крепости
+var level_farm2 = 0 # равен количеству построенных зданий этим хутора
+var name_farm = \"VampireCastle\"
+var owner_name = \"EXILE\"
+var founder = \"Server\" # основатель поселения
+var what_do = 0
+var can_spawn = 0 # если 0 - пришло время рождениея юнита
+var can_spawn2 = 1 #  сколько раз пропустить  перед созданием юнита
+var res_add = 0 #кол-во ресурсов, добываемых за один заход равно кол-ву юнитов
+var location_number = 0
+var spawn_time = 36 #время рождения крестьян и строительства хуторов
+var spawn_time2 = 36 #время рождения животных и строительства поселков и замка
+var level_build = 0
+
+func _ready():
+	set_process(false)
+	set_process_input(false)
+	Global_DataParser.build_castle_vampire += 1	
+#	Global_DataParser.build_fortress += 1
+	$Timer.start(spawn_time2)
+	$TimerLife.start(3600)	
+	$TimerBegin.start()
+	$Sprite.visible = true
+	$Level.text = str(level_build)
+
+sync func init(inventory:Control, name:String, data:Dictionary, spawn_position:Vector2, url_data:String = \"\"):
+#	rpc(\"load_data\", inventory, name, \"Bag\", data)
+	_name = name
+	_url_data = url_data
+	_data = inventory.load_data(name, \"Fortress\")
+	position = spawn_position
+
+
+#func load_data(inventory:Control, filename:String, item_list_label:String = \"Bag\", data_player:Dictionary = Dictionary()) -> Dictionary:
+##	if(item_list_label == \"Bag\"):
+#	url_data = \"res://Database//data_bag_\" + filename + \".json\"
+#	data = Global_DataParser.load_data(url_data)
+#	if ((data.empty() && item_list_label == \"Bag\" && !data_player.empty())):
+#		Global_DataParser.write_data(url_data, data_player)
+#		data = data_player
+#	return data
+
+
+func reload_data_by_inventory(inventory:Control) -> Dictionary:
+	_data = inventory.load_data(_name, \"Fortress\")
+	return _data
+
+
+func is_data_empty_by_inventory(inventory:Control) -> bool:
+	return inventory.is_inventory_empty_by_data(_data)
+
+
+func rpc_destroy_self():
+#	return 1
+	rpc(\"destroy_self\")
+
+
+sync func destroy_self() -> void:
+	for child in get_children():
+		if child.has_method('queue_free'):
+			child.queue_free()
+	Global_DataParser.delete_file(_url_data)
+
+func rpc_spawn_mobs(): #(nickname:String, data:Dictionary, die_position:Vector2, url_data:String=\"\") -> void:
+	if get_tree().is_network_server():
+		var object_path ='res://Scenes/Race//Vampire_High.tscn'
+		Global_Network.spawn_object(get_tree().get_network_unique_id(),object_path,$Sprite.global_position,\"VampireHigh\",Global_DataParser.join_race,Global_DataParser.location_number)
+
+func _on_Timer_timeout():
+	add_vampire()
+	if hp > 50:
+		Global_DataParser.add_energy(energy_farm)	
+		if what_do == 0 and can_spawn > 0:
+			can_spawn -= 1
+#			$SpawnTime.text = str(int(can_spawn*spawn_time2))		
+			return
+		if what_do == 0 and can_spawn == 0:				
+			can_spawn = can_spawn2
+#			$SpawnTime.text = str(int(can_spawn*spawn_time2))			
+			can_spawn2 += 1
+			if (vampire_count < max_vampire_count):
+				vampire_count += 1
+	#			if(already_build == false):			
+	#				spawn = false
+	#				already_build = true
+	#			rpc_spawn_mobs()			
+			if (resource > 100) and (vampire_count < max_vampire_count):
+				resource -= 100
+				vampire_count += 1
+	#			if(already_build == false):			
+	#				spawn = false
+	#				already_build = true
+				rpc_spawn_mobs()						
+	#	$WhatTimer.start(spawn_time)	
+			elif what_do == 0 and resource > 500 and (vampire_count == 10):
+					resource -= 500
+#					vampire_count -= 25
+#					var x = int(position.x/256) - 1
+#					var y = int(position.y/256)	- 1
+#					randomize()
+			#		for i in inventory.get_items():
+#					var x_coord = rand_range(-2, 2) # + self.position.x
+#					var y_coord = rand_range(-2, 2) # + self.position.y		
+
+#					var a = (x_coord *2 + x) * 256
+#					var b = (y_coord *2 + y)  * 256
+	#				new_position += 1
+#					SoundPlayer.play(preload(\"res://audio/sounds/preload_sfx/fire_cast1.wav\"))	
+#					level_farm2 += 1
+					level_build +=1
+					$Level.text = str(level_build)	
+#					rpc_spawn_castle(Vector2(a,b))
+					energy_farm = 500	
+					max_vampire_count = 50
+			elif what_do == 0 and resource >5000 and (vampire_count >199):
+					resource -= 5000
+#					vampire_count -= 8
+#					level_farm2 += 1
+
+					energy_farm = 5000		
+#					$Owner.text = founder + \":\" + name_farm #str(self.name)
+#					what_do = 0	#прекращаем увеличение населения и расширение поселений 						
+					level_build +=1
+					$Level.text = str(level_build)	
+								
+#					print(\"Farm now village================================================\")
+		elif what_do == 0 and resource > 1500 and (vampire_count == 50):
+					resource -= 1500
+	#				peasant_count -= 8
+	#				var x = int(position.x/256) - 1
+	#				var y = int(position.y/256)	- 1
+	#				randomize()
+			#		for i in inventory.get_items():
+	#				var x_coord = rand_range(-2, 2) # + self.position.x
+	#				var y_coord = rand_range(-2, 2) # + self.position.y		
+
+	#				var a = (x_coord *2 + x) * 256
+	#				var b = (y_coord *2 + y)  * 256
+	#				new_position += 1
+#					SoundPlayer.play(preload(\"res://audio/sounds/preload_sfx/fire_cast1.wav\"))	
+#					level_farm2 += 1
+#					$Sprite.texture = load(\"res://Assets/builds_new/empire/unit_castle_village.png\")														
+	#				now_city = 2 #теперь это посёлок
+#					name_farm = \"Village\"
+					energy_farm = 1500	
+					level_build +=1										
+#					$Owner.text = founder + \":\" + name_farm #str(self.name)
+					$Level.text = str(level_build)	
+					max_vampire_count = 200
+		$Timer.start(spawn_time)
+	#	if level_farm2 < 5:	 #
+	#		spawn_time2 = spawn_time2 + 12
+	#		$WhatTimer.start(spawn_time2)
+func add_vampire():
+	if hp > 50:
+#	if spawn == true:
+#		if(already_build == false):			
+#			spawn_all_farm()
+#			spawn = false
+#			already_build = true
+#	resource += res_add
+#	res_add *= 2
+#	peasant_count += 1
+#	wave_spawn += 1
+		if 	vampire_count < max_vampire_count:
+			vampire_count += 1
+		if 	resource < max_resource:
+			resource += vampire_count
+	#		res_add += peasant_count
+
+#		wave_spawn += 1		
+		$Resource.text = str(resource)
+	#	$Level.text = str(wave_spawn)
+#		$Year.text = str(wave_spawn)
+		$People.text = str(vampire_count)
+#		$Generation.text = str(level_farm2)
+	#	$SpawnTimer.start(spawn_time)
+
+#		_on_WhatTimer_timeout()
+	elif vampire_count > 0:
+		hp += 1
+
+func _on_TimerLife_timeout():
+	print(\"Fortress Life End\") # Replace with function body.
+	rpc_destroy_self()
+	get_parent().remove_child(self)
+	queue_free()
+	
+func get_data():
+	var  _new_data = get_data_all()
+	_new_data[\"positionX\"] = self.position.x
+	_new_data[\"positionY\"] = self.position.y		
+
+	_new_data[\"nickname\"] = \"Village_\" + self.name
+	_new_data[\"whoiam\"] =\"res://Scenes/Build/VampireCastle.tscn\"
+	_new_data[\"resource\"] = resource
+	_new_data[\"vampire_count\"] = vampire_count			
+	return _new_data
+func set_data(_new_data):
+	set_data_all(_new_data)
+	resource = 	_new_data[\"resource\"]
+	vampire_count = _new_data[\"vampire_count\"]		
+func reduce_hp(val):
+	if self.hp > 0:
+		self.hp -= val
+#		print(\"Healt -= %s\" % val)
+#		print(hp)
+	if self.hp > 0:
+		update_hp()
+	if self.hp <= 0:
+		die1()
+		return false
+	return true
+func die1():
+	Global_DataParser.build_castle_vampire -= 1	
+#	Global_DataParser.build_castle_vampire -= 1	
+	$Timer.stop()
+	$TimerLife.stop()
+	$SpawnTimer.stop()
+	rpc_destroy_self()	
+	get_parent().remove_child(self)
+	queue_free()	
+
+func _on_TimerBegin_timeout():
+	$Sprite.visible = false
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76, 77.5 )
+
+[node name="VampireCastle" type="KinematicBody2D"]
+script = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["build_remove", "build_repare", "fortress"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 56, 64 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerLife" type="Timer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.145098, 0.894118, 0.258824, 1 )
+position = Vector2( -403, -350 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="TimerBegin" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="People" type="Label" parent="."]
+margin_left = -50.0
+margin_top = -54.0
+margin_right = -30.0
+margin_bottom = -40.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = -50.0
+margin_top = 14.0
+margin_right = -30.0
+margin_bottom = 28.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resource" type="Label" parent="."]
+margin_left = 34.0
+margin_top = -54.0
+margin_right = 54.0
+margin_bottom = -40.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer2" type="Label" parent="."]
+margin_left = 147.0
+margin_top = 14.0
+margin_right = 167.0
+margin_bottom = 28.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Year" type="Label" parent="."]
+margin_left = 147.0
+margin_top = -54.0
+margin_right = 167.0
+margin_bottom = -40.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnTime" type="Label" parent="."]
+margin_left = 147.0
+margin_top = 52.0
+margin_right = 167.0
+margin_bottom = 66.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_bar" type="TextureProgress" parent="."]
+margin_left = -29.0
+margin_top = -23.0
+margin_right = 147.0
+margin_bottom = -7.0
+max_value = 1000.0
+value = 1000.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_left = -50.0
+margin_top = -88.0
+margin_right = 69.0
+margin_bottom = -74.0
+rect_scale = Vector2( 2, 2 )
+text = "Vampire's Castle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_TimerLife_timeout"]
+[connection signal="timeout" from="TimerBegin" to="." method="_on_TimerBegin_timeout" flags=6]

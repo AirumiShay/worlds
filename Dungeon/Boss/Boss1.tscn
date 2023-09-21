@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://music/hard/wolf.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scripts/Dungeon/Boss/Lich.gd" type="Script" id=3]
+[ext_resource path="res://Assets/units2/dark/Dark Priest green.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 99 )
+
+[node name="Boss1" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = -47.0
+margin_top = -110.0
+margin_right = 48.0
+margin_bottom = -100.0
+max_value = 30000.0
+value = 10000.0
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[node name="Inventory" type="Node2D" parent="." index="6"]
+visible = false
+
+[node name="TimerDie" type="Timer" parent="." index="7"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="8"]
+stream = ExtResource( 2 )
+autoplay = true
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerDie" to="." method="_on_TimerDie_timeout"]

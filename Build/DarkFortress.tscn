@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/build/fortress1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/build/DarkFortress.gd" type="Script" id=3]
+[ext_resource path="res://Assets/build_new2/Dark/black_tower.png" type="Texture" id=4]
+
+[node name="DarkFortress" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="0" groups=["build_remove", "fortress"]]
+position = Vector2( 253, 538.5 )
+scale = Vector2( 2, 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="HP_bar" parent="." index="3"]
+margin_left = -16.0
+margin_top = -25.0
+margin_right = 542.0
+margin_bottom = -5.0
+max_value = 5000.0
+value = 5.0
+
+[node name="Timer" type="Timer" parent="." index="4"]
+
+[node name="SpawnTimer" type="Timer" parent="." index="5"]
+
+[node name="SpawnBoss" type="Timer" parent="." index="6"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="SpawnBoss" to="." method="_on_SpawnBoss_timeout"]

@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/build/FarmEmpire.gd" type="Script" id=1]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_archery.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/health_bar_red.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/health_bar_green.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/action_active.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76, 77.5 )
+
+[node name="FarmEmpire" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="TimerBegin" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 76, 79.5 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["build_remove", "build_repare", "farm"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 76, 79.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1800.0
+autostart = true
+
+[node name="TimerLife" type="Timer" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="HP_bar" type="TextureProgress" parent="."]
+margin_left = 1.0
+margin_top = -21.0
+margin_right = 152.0
+margin_bottom = -4.0
+max_value = 250.0
+value = 250.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New_Generation" type="TextureProgress" parent="."]
+visible = false
+margin_left = 1.0
+margin_top = -21.0
+margin_right = 41.0
+margin_bottom = 19.0
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 160.0
+margin_top = -48.0
+margin_right = 184.0
+margin_bottom = -32.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Generation" type="Label" parent="."]
+margin_left = 160.0
+margin_top = -16.0
+margin_right = 184.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Year" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 18.0
+margin_right = 184.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnTime" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 46.0
+margin_right = 184.0
+margin_bottom = 62.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resource" type="Label" parent="."]
+margin_left = 40.0
+margin_top = -48.0
+margin_right = 88.0
+margin_bottom = -32.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="People" type="Label" parent="."]
+margin_left = -10.0
+margin_top = -48.0
+margin_right = 14.0
+margin_bottom = -32.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guard" type="Label" parent="."]
+margin_left = -42.0
+margin_top = 18.0
+margin_right = -18.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owner" type="Label" parent="."]
+margin_left = 2.0
+margin_top = -80.0
+margin_right = 77.0
+margin_bottom = -66.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhatTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SpriteBegin" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.380392 )
+position = Vector2( 72, 71 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 5 )
+
+[connection signal="timeout" from="TimerBegin" to="." method="_on_TimerBegin_timeout" flags=6]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_TimerLife_timeout" flags=6]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="WhatTimer" to="." method="_on_WhatTimer_timeout" flags=6]

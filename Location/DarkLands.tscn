@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Dungeon/Dungeon_Enter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Dungeon/Dungeon_Enter1.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Race/Bag_NPC.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Race/DarkElf.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Build/DarkFortress.tscn" type="PackedScene" id=21]
+
+[node name="DarkLands" type="Node2D"]
+
+[node name="Dark" type="Node2D" parent="."]
+
+[node name="DarkFortress" type="Node2D" parent="."]
+
+[node name="DarkFortress2" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( 2870, 11 )
+
+[node name="DarkFortress10" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( -3860, -57 )
+
+[node name="DarkFortress6" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( -2238, -1213 )
+
+[node name="DarkFortress8" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( -873, -1228 )
+
+[node name="DarkFortress14" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( 550, -1228 )
+
+[node name="DarkFortress16" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( 1915, -1243 )
+
+[node name="DarkElf" parent="DarkFortress" instance=ExtResource( 20 )]
+position = Vector2( 419, -313 )
+
+[node name="DarkElf2" parent="DarkFortress" instance=ExtResource( 20 )]
+position = Vector2( -533, 391 )
+
+[node name="DarkFortress17" parent="DarkFortress" instance=ExtResource( 21 )]
+position = Vector2( -876, 1065 )
+
+[node name="Bag_NPC3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2913, -483 )
+
+[node name="Bag_NPC4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 900, 100 )
+
+[node name="Bag_NPC5" parent="." instance=ExtResource( 17 )]
+position = Vector2( -2783, 1369 )
+
+[node name="Bag_NPC6" parent="." instance=ExtResource( 17 )]
+position = Vector2( -4796, 1952 )
+
+[node name="Bag_NPC7" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1250, -1018 )
+
+[node name="Bag_NPC8" parent="." instance=ExtResource( 17 )]
+position = Vector2( -3263, -435 )
+
+[node name="Bag_NPC9" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1150, -1016 )
+
+[node name="Bag_NPC10" parent="." instance=ExtResource( 17 )]
+position = Vector2( -3263, -435 )
+
+[node name="Bag_NPC11" parent="." instance=ExtResource( 17 )]
+position = Vector2( -67, 1485 )
+
+[node name="Bag_NPC12" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1147, 1516 )
+
+[node name="Bag_NPC13" parent="." instance=ExtResource( 17 )]
+position = Vector2( -67, 1485 )
+
+[node name="Bag_NPC14" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1147, 1516 )
+
+[node name="Dungeon_Enter" parent="." instance=ExtResource( 1 )]
+position = Vector2( -122, -129 )
+script = ExtResource( 2 )

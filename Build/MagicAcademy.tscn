@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Images/health_bar_green.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/health_bar_red.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/build/MagicAcademy.gd" type="Script" id=3]
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_hellenic_gymnasion.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 47.6668 )
+
+[node name="MagicAcademy" type="KinematicBody2D" groups=["ANIMALS", "build_remove", "build_repare", "empire"]]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." groups=["builds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 72, 71.4997 )
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" type="TextureProgress" parent="."]
+margin_left = 1.0
+margin_top = -32.0
+margin_right = 145.0
+margin_bottom = -12.0
+max_value = 1000.0
+value = 1000.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerLife" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_TimerLife_timeout" flags=6]

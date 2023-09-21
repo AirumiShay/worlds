@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Images/health_bar_red.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/health_bar_green.png" type="Texture" id=2]
+[ext_resource path="res://Assets/builds_new/empire/elf/unit_tds_tower3_longbow_occupied.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/build/TowerElf.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76, 77.5 )
+
+[node name="TowerElf" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 12, -30 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." groups=["build_remove", "build_repare", "village"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 76, 79.5 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1800.0
+autostart = true
+
+[node name="TimerLife" type="Timer" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="HP_bar" type="TextureProgress" parent="."]
+margin_left = 1.0
+margin_top = -19.0
+margin_right = 153.0
+margin_bottom = -4.0
+max_value = 500.0
+value = 500.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_TimerLife_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
