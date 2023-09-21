@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/units2/dark/Dark Priest red.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Unit/DarkLeader.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46, 98.5 )
+
+[node name="DarkLeader" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 48, 100.5 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = -1.0
+margin_top = -11.0
+margin_right = 92.0
+margin_bottom = -7.0
+max_value = 100000.0
+value = 2500.0
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[node name="SpawnTimer" type="Timer" parent="." index="6"]
+
+[node name="TimerAttack" type="Timer" parent="." index="7"]
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]

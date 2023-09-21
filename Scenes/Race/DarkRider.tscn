@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/units2/goblins/wolf-rider.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Unit/DarkRider.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/action_active.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Damage/DamageAreaBuilds.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52, 50.5 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 141.057
+
+[node name="DarkRider" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 73, 75 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = 24.0
+margin_top = 6.0
+margin_right = 121.0
+margin_bottom = 11.0
+max_value = 500.0
+value = 500.0
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+
+[node name="TimerHide" type="Timer" parent="." index="5"]
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+[node name="Inventory" type="Node2D" parent="." index="7"]
+visible = false
+
+[node name="DamageNPC" type="Area2D" parent="." index="8"]
+script = ExtResource( 5 )
+
+[node name="Area" type="CollisionShape2D" parent="DamageNPC" index="0"]
+position = Vector2( 73, 76 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="DamageNPC" index="1"]
+visible = false
+modulate = Color( 0.662745, 0.0392157, 0.913725, 1 )
+position = Vector2( -40, -40 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="TimerAttack" type="Timer" parent="." index="9"]
+
+[node name="Label" type="Label" parent="." index="10"]
+margin_left = 36.0
+margin_top = -17.0
+margin_right = 120.0
+margin_bottom = -3.0
+text = "Demon Rider"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="TimerHide" to="." method="_on_TimerHide_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]

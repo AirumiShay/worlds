@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Dungeon/Dungeon_Enter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/lands/andor_trail_village.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Dungeon/Dungeon_Tavern.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Race/Ork.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Race/Zombi_low.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Race/DarkElf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Race/Lich.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.5, 39.5 )
+
+[node name="Dungeon_Village" type="Area2D" groups=["enter"]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enter"]]
+position = Vector2( 33.5, 34.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Dungeon_Tavern" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 1306, 758 )
+
+[node name="DarkElf" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11446, 1901 )
+
+[node name="DarkElf2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 10359, 1448 )
+
+[node name="DarkElf3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12081, 1176 )
+
+[node name="DarkElf4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12352, -606 )
+
+[node name="DarkElf5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11476, -183 )
+
+[node name="DarkElf6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11144, -546 )
+
+[node name="DarkElf7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 10631, 58 )
+
+[node name="DarkElf8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 9695, 632 )
+
+[node name="DarkElf9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11174, 844 )
+
+[node name="DarkElf10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12594, 390 )
+
+[node name="Zombi" parent="." instance=ExtResource( 5 )]
+position = Vector2( 76, -5441 )
+
+[node name="Zombi2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 908, -6561 )
+
+[node name="Zombi3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 780, -4929 )
+
+[node name="Zombi4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -788, -5985 )
+
+[node name="Zombi5" parent="." instance=ExtResource( 5 )]
+position = Vector2( -596, -5313 )
+
+[node name="Zombi6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 268, -4769 )
+
+[node name="Zombi7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1484, -5249 )
+
+[node name="Zombi8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1548, -5953 )
+
+[node name="Zombi9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 652, -6049 )
+
+[node name="Zombi10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 76, -6145 )
+
+[node name="Ork" parent="." instance=ExtResource( 4 )]
+position = Vector2( -15031, -1049 )
+
+[node name="Ork2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -15534, -1552 )
+
+[node name="Ork3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -14420, 460 )
+
+[node name="Ork4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16109, -7 )
+
+[node name="Ork5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16252, -977 )
+
+[node name="Ork6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -13774, -44 )
+
+[node name="Ork7" parent="." instance=ExtResource( 4 )]
+position = Vector2( -14815, -295 )
+
+[node name="Ork8" parent="." instance=ExtResource( 4 )]
+position = Vector2( -15318, 424 )
+
+[node name="Ork9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -14097, -798 )
+
+[node name="Ork10" parent="." instance=ExtResource( 4 )]
+position = Vector2( -15570, -474 )
+
+[node name="Ghost" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1190, 11117 )
+
+[node name="Ghost2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1281, 9262 )
+
+[node name="Ghost3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -122, 9397 )
+
+[node name="Ghost4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2819, 9895 )
+
+[node name="Ghost5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2864, 10936 )
+
+[node name="Ghost6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2186, 12294 )
+
+[node name="Ghost7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 602, 12429 )
+
+[node name="Ghost8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1099, 10076 )
+
+[node name="Ghost9" parent="." instance=ExtResource( 7 )]
+position = Vector2( -213, 10348 )
+
+[node name="Ghost10" parent="." instance=ExtResource( 7 )]
+position = Vector2( -484, 11343 )

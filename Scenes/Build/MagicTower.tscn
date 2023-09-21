@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/builds_new/empire/unit_tds_tower1_crossbow.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/build/MagicTower.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Images/player.png" type="Texture" id=4]
+
+[node name="MagicTower" groups=["build_repare", "builds", "tower"] instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 67, 132 )
+scale = Vector2( 2, 2 )
+
+[node name="HP_bar" parent="." index="1"]
+margin_left = 1.0
+margin_top = -25.0
+margin_right = 151.0
+margin_bottom = -11.0
+max_value = 1000.0
+value = 1000.0
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 0, -64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+[node name="SpawnTimer" type="Timer" parent="." index="4"]
+
+[node name="TimerLife" type="Timer" parent="." index="5"]
+
+[node name="TimerBegin" type="Timer" parent="." index="6"]
+wait_time = 3.0
+one_shot = true
+
+[node name="SpriteBegin" type="Sprite" parent="." index="7"]
+visible = false
+modulate = Color( 1, 1, 1, 0.215686 )
+position = Vector2( 64, 136 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 4 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLife" to="." method="_on_TimerLife_timeout"]
+[connection signal="timeout" from="TimerBegin" to="." method="_on_TimerBegin_timeout" flags=6]

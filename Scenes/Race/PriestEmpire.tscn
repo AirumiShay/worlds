@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/units_new/human/unit_high_priest.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Unit/Priest.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.5, 28.125 )
+
+[node name="PriestEmpire" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+position = Vector2( 0, -50 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 35, 48 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = 7.0
+margin_top = -7.0
+margin_right = 57.0
+margin_bottom = -2.0
+max_value = 60.0
+value = 60.0
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[node name="Label" type="Label" parent="." index="6"]
+margin_left = 8.0
+margin_top = -24.0
+margin_right = 72.0
+margin_bottom = -10.0
+text = "Priests"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

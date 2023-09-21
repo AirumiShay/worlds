@@ -1,0 +1,616 @@
+[gd_scene format=2]
+
+[node name="MidleMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 570.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.752941 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -605.0
+margin_top = -355.0
+margin_right = 575.0
+margin_bottom = 345.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllNPC" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_right = 255.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "ALL NPC:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllBuildsCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_right = 875.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Single" type="Label" parent="Panel"]
+margin_left = 902.0
+margin_top = 1.0
+margin_right = 970.0
+margin_bottom = 17.0
+rect_scale = Vector2( 2, 2 )
+text = "Singleplay:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SingleValue" type="Label" parent="Panel"]
+margin_left = 1067.0
+margin_top = 1.0
+margin_right = 1124.0
+margin_bottom = 17.0
+rect_scale = Vector2( 2, 2 )
+text = "no"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HardMode" type="Label" parent="Panel"]
+margin_left = 902.0
+margin_top = 31.0
+margin_right = 970.0
+margin_bottom = 47.0
+rect_scale = Vector2( 2, 2 )
+text = "HardLevel:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HardModeLevel" type="Label" parent="Panel"]
+margin_left = 1067.0
+margin_top = 31.0
+margin_right = 1124.0
+margin_bottom = 47.0
+rect_scale = Vector2( 2, 2 )
+text = "easy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerID" type="Label" parent="Panel"]
+margin_left = 902.0
+margin_top = 60.0
+margin_right = 970.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "PlayerID:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_id" type="Label" parent="Panel"]
+margin_left = 1018.0
+margin_top = 60.0
+margin_right = 1075.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllNPCcount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_right = 378.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knight" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 30.0
+margin_right = 254.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "KNIGHT:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KnightCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 30.0
+margin_right = 378.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkElf" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 60.0
+margin_right = 257.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "Dark Elfs:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkElfCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 60.0
+margin_right = 378.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ork" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 90.0
+margin_right = 254.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "ORKs:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrkCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 90.0
+margin_right = 378.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kobold" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 120.0
+margin_right = 258.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "KOBOLD:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KoboldCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 120.0
+margin_right = 378.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TROLL" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 150.0
+margin_right = 254.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "TROLLs:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TROLLCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 150.0
+margin_right = 378.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paladin" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 180.0
+margin_right = 257.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "Paladins:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaladinCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 180.0
+margin_right = 378.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zombie" type="Label" parent="Panel"]
+margin_left = 198.0
+margin_top = 210.0
+margin_right = 258.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "Zombies:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZombieCount" type="Label" parent="Panel"]
+margin_left = 321.0
+margin_top = 210.0
+margin_right = 378.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Peasant" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_right = 515.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "Peasant:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PeasantCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_right = 638.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagFire" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 30.0
+margin_right = 514.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "MagFire:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagFireCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_top = 30.0
+margin_right = 638.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elf" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 60.0
+margin_right = 517.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "Light Elf:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ElfCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_top = 60.0
+margin_right = 638.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkMag" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 90.0
+margin_right = 514.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "DarkMag:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkMagCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_top = 90.0
+margin_right = 638.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animals" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 150.0
+margin_right = 514.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "Animals:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimalCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_top = 150.0
+margin_right = 638.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ghost" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 120.0
+margin_right = 517.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "Ghosts:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GhostCount" type="Label" parent="Panel"]
+margin_left = 581.0
+margin_top = 120.0
+margin_right = 638.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vampire" type="Label" parent="Panel"]
+margin_left = 458.0
+margin_top = 210.0
+margin_right = 518.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "Vampires:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VampireCount" type="Label" parent="Panel"]
+margin_left = 590.0
+margin_top = 210.0
+margin_right = 647.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllBuilds" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_right = 752.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "BUILDS:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Farm" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 30.0
+margin_right = 751.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "FARM:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FarmCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 30.0
+margin_right = 875.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Village" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 60.0
+margin_right = 754.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "Villages:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VillageCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 60.0
+margin_right = 875.0
+margin_bottom = 76.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Temple" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 90.0
+margin_right = 751.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "Temple:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TempleCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 90.0
+margin_right = 875.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Castle" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 120.0
+margin_right = 755.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "Castle:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CastleCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 120.0
+margin_right = 875.0
+margin_bottom = 136.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Capital" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 210.0
+margin_right = 751.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "Capital:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CapitalCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 210.0
+margin_right = 875.0
+margin_bottom = 226.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagTower" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 150.0
+margin_right = 751.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "MagTower:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagTowerCount" type="Label" parent="Panel"]
+margin_left = 835.0
+margin_top = 150.0
+margin_right = 892.0
+margin_bottom = 166.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fortress" type="Label" parent="Panel"]
+margin_left = 695.0
+margin_top = 180.0
+margin_right = 754.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "Fortress:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FortressCount" type="Label" parent="Panel"]
+margin_left = 818.0
+margin_top = 180.0
+margin_right = 875.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VampireH" type="Label" parent="Panel"]
+margin_left = 456.0
+margin_top = 180.0
+margin_right = 523.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "VampireH:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VampireHCount" type="Label" parent="Panel"]
+margin_left = 590.0
+margin_top = 180.0
+margin_right = 647.0
+margin_bottom = 196.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

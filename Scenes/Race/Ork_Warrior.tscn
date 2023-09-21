@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Damage/DamageAreaDarkEmpire.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Race/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Unit/Ork_Warrior.gd" type="Script" id=4]
+[ext_resource path="res://Assets/units/ork/ork.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.5, 26 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 71.007
+
+[node name="Ork_Warrior" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 33.5, 32 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = 7.0
+margin_top = -7.0
+margin_right = 57.0
+margin_bottom = -2.0
+value = 100.0
+
+[node name="TimerDamage" type="Timer" parent="." index="3"]
+
+[node name="StandingTimer" type="Timer" parent="." index="4"]
+
+[node name="DamagePos" type="Position2D" parent="." index="5"]
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+[node name="Inventory" type="Node2D" parent="." index="7"]
+visible = false
+
+[node name="DamageNPC" type="Area2D" parent="." index="8"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageNPC" index="0"]
+position = Vector2( 31, 29 )
+shape = SubResource( 2 )
+
+[node name="Camera" parent="." index="9" instance=ExtResource( 2 )]
+
+[node name="LevelLabel" type="Label" parent="." index="10"]
+visible = false
+modulate = Color( 0.0705882, 0.262745, 0.847059, 1 )
+margin_left = 58.0
+margin_top = -13.0
+margin_right = 98.0
+margin_bottom = 1.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="TimerDamage" to="." method="_on_TimerDamage_timeout"]
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

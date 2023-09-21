@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Damage/DamageAreaDarkEmpire.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Unit/Skeleton.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Race/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/units2/undead/Skeleton.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 54.5 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 80.0062
+
+[sub_resource type="TileSet" id=3]
+0/name = "Skeleton.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 14, 14, 64, 109 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Skeleton" instance=ExtResource( 5 )]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 37, 56.5 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="1"]
+margin_left = 7.0
+margin_top = -7.0
+margin_right = 57.0
+margin_bottom = -2.0
+max_value = 120.0
+value = 120.0
+
+[node name="TimerDamage" type="Timer" parent="." index="2"]
+
+[node name="StandingTimer" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[node name="Inventory" type="Node2D" parent="." index="6"]
+visible = false
+
+[node name="DamageNPC" type="Area2D" parent="." index="7"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageNPC" index="0"]
+position = Vector2( 37, 50 )
+shape = SubResource( 2 )
+
+[node name="Camera" parent="." index="8" instance=ExtResource( 3 )]
+
+[node name="LevelLabel" type="Label" parent="." index="9"]
+visible = false
+modulate = Color( 0.0705882, 0.262745, 0.847059, 1 )
+margin_left = 58.0
+margin_top = -13.0
+margin_right = 98.0
+margin_bottom = 1.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="." index="10"]
+
+[node name="TileMap" type="TileMap" parent="Area2D" index="0"]
+scale = Vector2( 0.8, 0.8 )
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+
+[connection signal="timeout" from="TimerDamage" to="." method="_on_TimerDamage_timeout"]
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

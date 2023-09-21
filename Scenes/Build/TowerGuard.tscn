@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/build/TowerGuard.gd" type="Script" id=2]
+[ext_resource path="res://Assets/builds_new/empire/gnome/unit_tds_tower4_ballista.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Damage/DamageAreaRange.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 509.016
+
+[node name="TowerGuard" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DamageNPC" type="Area2D" parent="." index="0"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageNPC" index="0"]
+position = Vector2( 50, 83 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 50.25, 117.5 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="HP_bar" parent="." index="3"]
+margin_left = 2.0
+margin_top = 16.0
+margin_right = 87.0
+margin_bottom = 28.0
+max_value = 3500.0
+value = 3500.0
+
+[node name="TimerAttack" type="Timer" parent="." index="4"]
+
+[node name="Label" type="Label" parent="." index="5"]
+margin_left = -5.0
+margin_top = -10.0
+margin_right = 98.0
+margin_bottom = 4.0
+text = "Tower of Guards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]

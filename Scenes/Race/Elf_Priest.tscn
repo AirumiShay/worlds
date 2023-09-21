@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/DarkEmpire.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/units/elf/shaman.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.25, 27.625 )
+
+[node name="ElfPriest" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 48.25, 47.375 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="1"]
+margin_left = 23.0
+margin_top = 4.0
+margin_right = 73.0
+margin_bottom = 9.0
+value = 100.0
+
+[node name="StandingTimer" type="Timer" parent="." index="2"]
+
+[node name="DamagePos" type="Position2D" parent="." index="3"]
+
+[node name="Timer" type="Timer" parent="." index="4"]
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( -8, -8 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="TimerTarget" type="Timer" parent="." index="6"]
+
+[node name="Area2D" type="Area2D" parent="." index="7" groups=["empire"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+[connection signal="timeout" from="StandingTimer" to="." method="_on_StandingTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerTarget" to="." method="_on_TimerTarget_timeout"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/units2/elvish/scout.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/misc/dagger.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/MerchantExile.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.75, 50.75 )
+
+[node name="MerchantExile" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 54.25, 58.25 )
+shape = SubResource( 1 )
+
+[node name="HP_bar" parent="." index="2"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 104.0
+margin_bottom = 4.0
+max_value = 200.0
+value = 200.0
+
+[node name="StandingTimerMerch" type="Timer" parent="." index="3"]
+
+[node name="DamagePos" type="Position2D" parent="." index="4"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="DamagePos" index="0"]
+position = Vector2( 23, 30 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="DamagePos" index="1"]
+position = Vector2( 55, 45 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="TimerMerch" type="Timer" parent="." index="5"]
+
+[connection signal="timeout" from="StandingTimerMerch" to="." method="_on_StandingTimerMerch_timeout"]
+[connection signal="timeout" from="TimerMerch" to="." method="_on_TimerMerch_timeout"]

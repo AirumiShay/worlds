@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/builds_new/empire/unit_bld_barracks.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/build/Barrack.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Stickman.tscn" type="PackedScene" id=3]
+
+[node name="Barrack" instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="0" groups=["build_remove", "build_repare", "builds", "empire"]]
+position = Vector2( 74.5, 80 )
+scale = Vector2( 2, 2 )
+
+[node name="HP_bar" parent="." index="1"]
+margin_left = 1.0
+margin_top = -25.0
+margin_right = 151.0
+margin_bottom = -11.0
+max_value = 2000.0
+value = 2000.0
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+[node name="SpawnTimer" type="Timer" parent="." index="4"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_Timer_timeout"]

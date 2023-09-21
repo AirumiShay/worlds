@@ -1,0 +1,256 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/lands2/granit.png" type="Texture" id=1]
+[ext_resource path="res://Assets/button/cancel.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Dungeon/Boss/Boss1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/misc/high_res_pixel2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Dungeon/Mobs/Mobs1.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76.5, 77 )
+
+[node name="Dungeon_Sklep" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["exit"]]
+position = Vector2( 819.5, 920 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 192, -254 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Wall" type="Node2D" parent="."]
+visible = false
+
+[node name="Granit" type="Sprite" parent="Wall"]
+position = Vector2( 623, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit2" type="Sprite" parent="Wall"]
+position = Vector2( 237, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit3" type="Sprite" parent="Wall"]
+position = Vector2( 365, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit4" type="Sprite" parent="Wall"]
+position = Vector2( 494, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit5" type="Sprite" parent="Wall"]
+position = Vector2( 1283, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit9" type="Sprite" parent="Wall"]
+position = Vector2( 1329, 555 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit10" type="Sprite" parent="Wall"]
+position = Vector2( 1314, 145 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit11" type="Sprite" parent="Wall"]
+position = Vector2( 1329, 284 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit12" type="Sprite" parent="Wall"]
+position = Vector2( 1329, 419 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit17" type="Sprite" parent="Wall"]
+position = Vector2( 1186, 137 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit18" type="Sprite" parent="Wall"]
+position = Vector2( 1186, -134 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit19" type="Sprite" parent="Wall"]
+position = Vector2( 1186, 1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit20" type="Sprite" parent="Wall"]
+position = Vector2( 330, 135 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit21" type="Sprite" parent="Wall"]
+position = Vector2( 330, -136 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit22" type="Sprite" parent="Wall"]
+position = Vector2( 330, -1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit13" type="Sprite" parent="Wall"]
+position = Vector2( 187, 553 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit14" type="Sprite" parent="Wall"]
+position = Vector2( 200, 145 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit15" type="Sprite" parent="Wall"]
+position = Vector2( 187, 282 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit16" type="Sprite" parent="Wall"]
+position = Vector2( 187, 417 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit6" type="Sprite" parent="Wall"]
+position = Vector2( 897, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit31" type="Sprite" parent="Wall"]
+position = Vector2( 623, 824 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit32" type="Sprite" parent="Wall"]
+position = Vector2( 897, 824 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit33" type="Sprite" parent="Wall"]
+position = Vector2( 634, 960 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit34" type="Sprite" parent="Wall"]
+position = Vector2( 890, 960 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit35" type="Sprite" parent="Wall"]
+position = Vector2( 762, 960 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit7" type="Sprite" parent="Wall"]
+position = Vector2( 1025, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit8" type="Sprite" parent="Wall"]
+position = Vector2( 1154, 688 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit23" type="Sprite" parent="Wall"]
+position = Vector2( 716, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit24" type="Sprite" parent="Wall"]
+position = Vector2( 330, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit25" type="Sprite" parent="Wall"]
+position = Vector2( 458, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit26" type="Sprite" parent="Wall"]
+position = Vector2( 587, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit27" type="Sprite" parent="Wall"]
+position = Vector2( 844, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit28" type="Sprite" parent="Wall"]
+position = Vector2( 972, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit29" type="Sprite" parent="Wall"]
+position = Vector2( 1100, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Granit30" type="Sprite" parent="Wall"]
+position = Vector2( 1229, -254 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 774, 965 )
+rotation = -1.5708
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Boss1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 825, 390 )
+
+[node name="Mobs1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 823, 556 )
+
+[node name="Mobs2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 707, 387 )
+
+[node name="Mobs3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 824, 224 )
+
+[node name="Mobs4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 928, 391 )
